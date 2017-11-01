@@ -1,0 +1,13 @@
+﻿<Window x:Class="ListOfCosts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ListOfCosts"
+        mc:Ignorable="d"
+        Title="List Of Costs" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" Margin="74,145,0,0" VerticalAlignment="Top" Click="register_Click" Width="164"/>
+        <Button x:Name="button1" Content="Log In" HorizontalAlignment="Left" Margin="257,145,0,0" Click="login_Click" VerticalAlignment="Top" Width="186"/>
+    </Grid>
+</Window>
