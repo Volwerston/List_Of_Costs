@@ -34,7 +34,9 @@ namespace ListOfCosts
 
         private void login_Click(object sender, RoutedEventArgs e)
         {
-
+            Login l = new Login();
+            l.Show();
+            this.Close();
         }
     }
 }

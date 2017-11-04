@@ -1,4 +1,6 @@
-﻿using ListOfCosts.Models.Helpers;
+﻿using ListOfCosts.db_client;
+using ListOfCosts.Models;
+using ListOfCosts.Models.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +49,9 @@ namespace ListOfCosts.ViewModels
 
         public void Register()
         {
+            IDbStrategy<RegisterBindingModel> model = DbContext.GetStartegy<RegisterBindingModel>() as IDbStrategy<RegisterBindingModel>;
 
+            model.Create(RegisterHelper.Model);
         }
 
         public RegisterViewModel()
