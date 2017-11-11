@@ -64,5 +64,10 @@ namespace ListOfCosts.db_client
 
             return identity as TResult;
         }
+
+        public IEnumerable<RegisterBindingModel> ReadAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

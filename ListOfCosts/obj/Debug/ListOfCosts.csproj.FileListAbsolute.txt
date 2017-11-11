@@ -31,3 +31,5 @@ C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\ListOfCosts.Properti
 C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\ListOfCosts.csproj.GenerateResource.Cache
 C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\Login.g.cs
 C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\Login.baml
+C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\ListWindow.g.cs
+C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\ListWindow.baml

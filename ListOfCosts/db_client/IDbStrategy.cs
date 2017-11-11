@@ -11,5 +11,7 @@ namespace ListOfCosts.db_client
         T Create(T source);
 
         TResult Read<TParam, TResult>(TParam param) where TResult : class;
+
+        IEnumerable<T> ReadAll();
     }
 }

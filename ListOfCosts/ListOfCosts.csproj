@@ -56,25 +56,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="db_client\CostDbStrategy.cs" />
     <Compile Include="db_client\DbContext.cs" />
     <Compile Include="db_client\DefaultHasher.cs" />
     <Compile Include="db_client\IDbStrategy.cs" />
     <Compile Include="db_client\IHasher.cs" />
     <Compile Include="db_client\MD5Hasher.cs" />
+    <Compile Include="db_client\ResourceDbStrategy.cs" />
     <Compile Include="db_client\UserDbStrategy.cs" />
+    <Compile Include="ListWindow.xaml.cs">
+      <DependentUpon>ListWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\DTO\Cost.cs" />
     <Compile Include="Models\DTO\LoginBindingModel.cs" />
     <Compile Include="Models\DTO\RegisterBindingModel.cs" />
+    <Compile Include="Models\DTO\Resource.cs" />
     <Compile Include="Models\DTO\UserIdentity.cs" />
     <Compile Include="Models\Helpers\LoginBindingHelper.cs" />
     <Compile Include="Models\Helpers\RegisterBindingHelper.cs" />
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ListsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Page Include="ListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -18,6 +18,14 @@ namespace ListOfCosts.db_client
             {
                 return new UserDbStrategy();
             }
+            else if(typeof(T) == typeof(Resource))
+            {
+                return new ResourceDbStrategy();
+            }
+            else if(typeof(T) == typeof(Cost))
+            {
+                return new CostDbStrategy();
+            }
 
             return null;
         }
