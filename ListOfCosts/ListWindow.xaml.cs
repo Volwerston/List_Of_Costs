@@ -25,5 +25,19 @@ namespace ListOfCosts
             InitializeComponent();
             DataContext = new ListsViewModel();
         }
+
+        protected virtual void Add_Resource(object sender, EventArgs e)
+        {
+            AddResource ar = new AddResource();
+            ar.Closing += (DataContext as ListsViewModel).Refresh;
+            ar.Show();
+        }
+
+        private void Add_Cost(object sender, RoutedEventArgs e)
+        {
+            AddCost ac = new AddCost();
+            ac.Closing += (DataContext as ListsViewModel).Refresh;
+            ac.Show();
+        }
     }
 }

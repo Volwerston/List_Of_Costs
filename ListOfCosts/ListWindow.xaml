@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
-        Title="ListWindow" Height="300" Width="300">
+        Title="ListWindow" Height="400" Width="300">
     <StackPanel>
-        <Button>Додати ресурс</Button>
+        <Button Click="Add_Resource">Додати ресурс</Button>
         <ListView Margin="10" ItemsSource="{Binding Resources}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -22,7 +22,7 @@
                                 <TextBlock Text="Title: " />
                                 <TextBlock Text="{Binding Title}" FontWeight="Bold" />
                                 <TextBlock Text="Type: " />
-                                <TextBlock Text="{Binding Type}" FontWeight="Bold" />
+                                <TextBlock Text="{Binding ResourceType.Name}" FontWeight="Bold" />
                                 <TextBlock Text="Amount: " />
                                 <TextBlock Text="{Binding Amount}" FontWeight="Bold" />
                             </StackPanel>
@@ -31,7 +31,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button>Додати витрати</Button>
+        <Button Click="Add_Cost">Додати витрати</Button>
         <ListView Margin="10" ItemsSource="{Binding Costs}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -46,7 +46,7 @@
                                 <TextBlock Text="Title: " />
                                 <TextBlock Text="{Binding Title}" FontWeight="Bold" />
                                 <TextBlock Text="Type: " />
-                                <TextBlock Text="{Binding Type}" FontWeight="Bold" />
+                                <TextBlock Text="{Binding CostsType.Name}" FontWeight="Bold" />
                                 <TextBlock Text="Current wastes: " />
                                 <TextBlock Text="{Binding CurrentWaste}" FontWeight="Bold" />
                             </StackPanel>

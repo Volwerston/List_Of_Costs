@@ -15,13 +15,14 @@ namespace ListOfCosts.db_client
         {
             using(SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
             {
-                string cmdString = "INSERT INTO Resources VALUES(@ti, @ty, @am)";
+                string cmdString = "INSERT INTO Resource VALUES(@ti, @am, @ty, @id)";
 
                 using (SqlCommand cmd = new SqlCommand(cmdString, con))
                 {
                     cmd.Parameters.AddWithValue("@ti", source.Title);
-                    cmd.Parameters.AddWithValue("@ty", source.Type);
+                    cmd.Parameters.AddWithValue("@ty", source.ResourceType.Id);
                     cmd.Parameters.AddWithValue("@am", source.Amount);
+                    cmd.Parameters.AddWithValue("@id", DbContext.Identity.Id);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -40,8 +41,13 @@ namespace ListOfCosts.db_client
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Resources", con))
+                using (SqlCommand cmd = new SqlCommand(@"SELECT A.Id as ResourceId, A.Name as ResourceName, A.Amount, B.Name as CategoryName, B.Id as TypeId
+                                                         FROM Resource A 
+                                                         Inner Join ResourceType B
+                                                         ON A.TypeId =  B.Id
+                                                         Where A.OwnerId=@id", con))
                 {
+                    cmd.Parameters.AddWithValue("@id", DbContext.Identity.Id);
 
                     con.Open();
 
@@ -53,9 +59,13 @@ namespace ListOfCosts.db_client
                         {
                             toReturn.Add(new Resource() {
                                 Amount = double.Parse(rdr["Amount"].ToString()),
-                                Id = int.Parse(rdr["Id"].ToString()),
-                                Title = rdr["Title"].ToString(),
-                                Type = rdr["Type"].ToString()
+                                Id = int.Parse(rdr["ResourceId"].ToString()),
+                                Title = rdr["ResourceName"].ToString(),
+                                ResourceType = new Category()
+                                {
+                                    Id = int.Parse(rdr["TypeId"].ToString()),
+                                    Name = rdr["categoryName"].ToString()
+                                }
                             });
                         }
 

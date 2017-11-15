@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace ListOfCosts.Models.DTO
 {
-    public class Cost
+    public class Category
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public double CurrentWaste { get; set; }
-
-        public Category CostsType { get; set; }
+        public string Name { get; set; }
     }
 }

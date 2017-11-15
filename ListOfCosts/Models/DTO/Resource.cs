@@ -10,7 +10,8 @@ namespace ListOfCosts.Models.DTO
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public string Type { get; set; }
         public double Amount { get; set; }
+
+        public Category ResourceType { get; set; }
     }
 }

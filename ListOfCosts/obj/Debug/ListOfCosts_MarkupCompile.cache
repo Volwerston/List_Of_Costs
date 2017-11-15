@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\
+C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\
 ListOfCosts
 none
 false
 DEBUG;TRACE
-C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\App.xaml
-4167471021
+C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\App.xaml
+6-1321200869
 
-26-207799440
+33584693642
 14598183689
-ListWindow.xaml;Login.xaml;MainWindow.xaml;Register.xaml;
+AddCost.xaml;AddResource.xaml;ListWindow.xaml;Login.xaml;MainWindow.xaml;Register.xaml;
 
 False
 

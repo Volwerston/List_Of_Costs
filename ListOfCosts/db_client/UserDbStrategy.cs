@@ -39,7 +39,7 @@ namespace ListOfCosts.db_client
 
             using (SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
             {
-                string cmdString = "SELECT Login FROM Users WHERE Login=@l AND PasswordHash=@ph";
+                string cmdString = "SELECT Id,Login FROM Users WHERE Login=@l AND PasswordHash=@ph";
 
                 using (SqlCommand cmd = new SqlCommand(cmdString, con))
                 {
@@ -55,7 +55,8 @@ namespace ListOfCosts.db_client
                         {
                             identity = new UserIdentity()
                             {
-                                Login = rdr["Login"].ToString()
+                                Login = rdr["Login"].ToString(),
+                                Id = int.Parse(rdr["Id"].ToString())
                             };
                         }
                     }

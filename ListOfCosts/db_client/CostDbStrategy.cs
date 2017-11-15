@@ -15,13 +15,14 @@ namespace ListOfCosts.db_client
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
             {
-                string cmdString = "INSERT INTO Costs VALUES(@ti, @ty, @cw)";
+                string cmdString = "INSERT INTO Cost VALUES(@ti, @cw, @ty, @id)";
 
                 using (SqlCommand cmd = new SqlCommand(cmdString, con))
                 {
                     cmd.Parameters.AddWithValue("@ti", source.Title);
-                    cmd.Parameters.AddWithValue("@ty", source.Type);
+                    cmd.Parameters.AddWithValue("@ty", source.CostsType.Id);
                     cmd.Parameters.AddWithValue("@cw", source.CurrentWaste);
+                    cmd.Parameters.AddWithValue("@id", DbContext.Identity.Id);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -40,9 +41,13 @@ namespace ListOfCosts.db_client
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Costs", con))
+                using (SqlCommand cmd = new SqlCommand(@"SELECT A.Name as CostName, B.Name as TypeName, A.CurrWastes, A.Id, B.Id as TypeId
+                                                         FROM Cost A 
+                                                         INNER JOIN CostsType B
+                                                         ON A.TypeId = B.Id
+                                                         Where A.OwnerId=@id", con))
                 {
-
+                    cmd.Parameters.AddWithValue("@id", DbContext.Identity.Id);
                     con.Open();
 
                     using (SqlDataReader rdr = cmd.ExecuteReader())
@@ -53,10 +58,14 @@ namespace ListOfCosts.db_client
                         {
                             toReturn.Add(new Cost()
                             {
-                                CurrentWaste = double.Parse(rdr["CurrentWaste"].ToString()),
+                                CurrentWaste = double.Parse(rdr["CurrWastes"].ToString()),
                                 Id = int.Parse(rdr["Id"].ToString()),
-                                Title = rdr["Title"].ToString(),
-                                Type = rdr["Type"].ToString()
+                                Title = rdr["CostName"].ToString(),
+                                CostsType = new Category()
+                                {
+                                    Id = int.Parse(rdr["TypeId"].ToString()),
+                                    Name = rdr["TypeName"].ToString()
+                                }
                             });
                         }
 
