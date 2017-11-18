@@ -22,9 +22,22 @@ namespace ListOfCosts
     {
         public AddCost()
         {
+            Closing += AddCost_Closing;
             InitializeComponent();
             DataContext = new AddCostViewModel();
-            //Closing += AddCost_Closing;
+        }
+
+        public AddCost(int costId)
+        {
+            Closing += AddCost_Closing;
+            InitializeComponent();
+            DataContext = new AddCostViewModel(costId);
+        }
+
+        private void AddCost_Closing(object sender, EventArgs e)
+        {
+            AddCostViewModel vm = DataContext as AddCostViewModel;
+            vm.CostCategories.Clear();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

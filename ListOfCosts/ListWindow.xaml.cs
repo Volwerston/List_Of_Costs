@@ -44,9 +44,18 @@ namespace ListOfCosts
         {
             int costId = (int)((Border)sender).Tag;
 
-            AddCost ac = new AddCost();
+            AddCost ac = new AddCost(costId);
             ac.Closing += (DataContext as ListsViewModel).Refresh;
-            ac.DataContext = new AddCostViewModel(costId);
+
+            ac.Show();
+        }
+
+        private void Edit_Resource(object sender, MouseButtonEventArgs e)
+        {
+            int resourceId = (int)((Border)sender).Tag;
+
+            AddResource ac = new AddResource(resourceId);
+            ac.Closing += (DataContext as ListsViewModel).Refresh;
 
             ac.Show();
         }

@@ -19,8 +19,22 @@ namespace ListOfCosts
     {
         public AddResource()
         {
+            Closing += AddResource_Closing;
             InitializeComponent();
             DataContext = new AddResourceViewModel();
+        }
+
+        public AddResource(int resourceId)
+        {
+            Closing += AddResource_Closing;
+            InitializeComponent();
+            DataContext = new AddResourceViewModel(resourceId);
+        }
+
+        private void AddResource_Closing(object sender, EventArgs e)
+        {
+            AddResourceViewModel vm = DataContext as AddResourceViewModel;
+            vm.Categories.Clear();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

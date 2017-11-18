@@ -13,7 +13,7 @@ namespace ListOfCosts.db_client
     {
         public Resource Create(Resource source)
         {
-            using(SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
             {
                 string cmdString = "INSERT INTO Resource VALUES(@ti, @am, @ty, @id)";
 
@@ -34,12 +34,72 @@ namespace ListOfCosts.db_client
 
         public TResult Read<TParam, TResult>(TParam param) where TResult : class
         {
-            throw new NotImplementedException();
+            dynamic resouceId = param;
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(@"SELECT A.Id as ResourceId, A.Name as ResourceName, A.Amount, B.Name as CategoryName, B.Id as TypeId
+                                                         FROM Resource A 
+                                                         Inner Join ResourceType B
+                                                         ON A.TypeId =  B.Id
+                                                         Where A.OwnerId=@oid AND A.Id=@id", con))
+                {
+                    cmd.Parameters.AddWithValue("@oid", DbContext.Identity.Id);
+                    cmd.Parameters.AddWithValue("@id", resouceId);
+
+                    con.Open();
+
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        Resource toReturn = null;
+
+
+                        if (rdr.Read())
+                        {
+                            toReturn = new Resource()
+                            {
+                                Amount = double.Parse(rdr["Amount"].ToString()),
+                                Id = int.Parse(rdr["ResourceId"].ToString()),
+                                Title = rdr["ResourceName"].ToString(),
+                                ResourceType = new Category()
+                                {
+                                    Id = int.Parse(rdr["TypeId"].ToString()),
+                                    Name = rdr["categoryName"].ToString()
+                                }
+                            };
+                        }
+
+                        return toReturn as TResult;
+                    }
+                }
+            }
         }
+    
 
         public Resource Update(Resource source)
         {
-            throw new NotImplementedException();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
+            {
+                string cmdString = @"UPDATE Resource
+                                     Set Name=@n, Amount=@am, TypeId=@tid
+                                     Where (OwnerId=@oid) AND (Id=@id)
+                                    ";
+
+                using(SqlCommand cmd = new SqlCommand(cmdString, con))
+                {
+                    cmd.Parameters.AddWithValue("@n", source.Title);
+                    cmd.Parameters.AddWithValue("@am", source.Amount);
+                    cmd.Parameters.AddWithValue("@tid", source.ResourceType.Id);
+
+                    cmd.Parameters.AddWithValue("@oid", DbContext.Identity.Id);
+                    cmd.Parameters.AddWithValue("@id", source.Id);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+
+                    return source;
+                }
+            }
         }
 
         public IEnumerable<Resource> ReadAll()
@@ -50,7 +110,8 @@ namespace ListOfCosts.db_client
                                                          FROM Resource A 
                                                          Inner Join ResourceType B
                                                          ON A.TypeId =  B.Id
-                                                         Where A.OwnerId=@id", con))
+                                                         Where A.OwnerId=@id
+                                                         Order By A.Id desc", con))
                 {
                     cmd.Parameters.AddWithValue("@id", DbContext.Identity.Id);
 

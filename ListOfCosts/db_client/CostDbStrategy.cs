@@ -108,7 +108,9 @@ namespace ListOfCosts.db_client
                                                          FROM Cost A 
                                                          INNER JOIN CostsType B
                                                          ON A.TypeId = B.Id
-                                                         Where A.OwnerId=@id", con))
+                                                         Where A.OwnerId=@id
+                                                         Order By A.Id desc", con))
+
                 {
                     cmd.Parameters.AddWithValue("@id", DbContext.Identity.Id);
                     con.Open();

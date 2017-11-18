@@ -17,7 +17,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
-                        <Border BorderBrush="Black" BorderThickness="1">
+                        <Border BorderBrush="Black" BorderThickness="1"  MouseLeftButtonUp="Edit_Resource" Tag="{Binding Id}">
                             <StackPanel>
                                 <TextBlock Text="Title: " />
                                 <TextBlock Text="{Binding Title}" FontWeight="Bold" />

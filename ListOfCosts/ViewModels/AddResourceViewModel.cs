@@ -12,6 +12,8 @@ namespace ListOfCosts.ViewModels
 {
     class AddResourceViewModel: DependencyObject
     {
+        private readonly int _id = 0;
+
         public ObservableCollection<Category> Categories
         {
             get { return (ObservableCollection<Category>)GetValue(CategoriesProperty); }
@@ -58,11 +60,30 @@ namespace ListOfCosts.ViewModels
             }
         }
 
+        public AddResourceViewModel(int id)
+        {
+            _id = id;
+
+            ResourceCategoryDbStrategy s = new ResourceCategoryDbStrategy();
+
+            foreach (var c in s.ReadAll())
+            {
+                Categories.Add(c);
+            }
+
+            Resource toGet = new ResourceDbStrategy().Read<int, Resource>(id);
+
+            Title = toGet.Title;
+            Amount = toGet.Amount;
+            SelectedCategory = toGet.ResourceType.Id;
+        }
+
         public void Add()
         {
             ResourceDbStrategy s = new ResourceDbStrategy();
-            s.Create(new Resource()
+            Resource r = new Resource()
             {
+                 Id = _id,
                  Amount = Amount,
                  ResourceType = new Category()
                  {
@@ -70,7 +91,17 @@ namespace ListOfCosts.ViewModels
                       Name = Categories.Where(x => x.Id == SelectedCategory).First().Name
                  },
                  Title = Title
-            });
+            };
+
+            if(_id != 0)
+            {
+                s.Update(r);
+            }
+            else
+            {
+                s.Create(r);
+            }
+
         }
     }
 }
