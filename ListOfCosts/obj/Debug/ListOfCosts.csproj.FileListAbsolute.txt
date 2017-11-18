@@ -41,3 +41,7 @@ C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\ListOfCost
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\ListOfCosts.csproj.GenerateResource.Cache
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\ListOfCosts.exe
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\ListOfCosts.pdb
+C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\AddCost.g.cs
+C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\AddResource.g.cs
+C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\AddCost.baml
+C:\Users\Юра\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\AddResource.baml

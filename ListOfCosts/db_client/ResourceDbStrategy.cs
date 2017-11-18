@@ -37,6 +37,11 @@ namespace ListOfCosts.db_client
             throw new NotImplementedException();
         }
 
+        public Resource Update(Resource source)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Resource> ReadAll()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))

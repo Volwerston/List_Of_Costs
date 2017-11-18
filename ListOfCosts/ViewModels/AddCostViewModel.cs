@@ -12,6 +12,8 @@ namespace ListOfCosts.ViewModels
 {
     public class AddCostViewModel: DependencyObject
     {
+        private readonly int _id = 0;
+
         public ObservableCollection<Category> CostCategories
         {
             get { return (ObservableCollection<Category>)GetValue(CostCategoriesProperty); }
@@ -39,6 +41,17 @@ namespace ListOfCosts.ViewModels
         public static readonly DependencyProperty SelectedCategoryProperty =
             DependencyProperty.Register("SelectedCategory", typeof(int), typeof(AddCostViewModel), new PropertyMetadata(0));
 
+        public double CurrentWastes
+        {
+            get { return (double)GetValue(CurrentWastesProperty); }
+            set { SetValue(CurrentWastesProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for CurrentWastes.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CurrentWastesProperty =
+            DependencyProperty.Register("CurrentWastes", typeof(double), typeof(AddCostViewModel), new PropertyMetadata(0.00));
+
+
         public AddCostViewModel()
         {
             CostCategoryDbStrategy s = new CostCategoryDbStrategy();
@@ -49,19 +62,47 @@ namespace ListOfCosts.ViewModels
             }
         }
 
+        public AddCostViewModel(int id)
+        {
+            _id = id;
+
+            CostCategoryDbStrategy s = new CostCategoryDbStrategy();
+
+            foreach (var c in s.ReadAll())
+            {
+                CostCategories.Add(c);
+            }
+
+            Cost toEdit = new CostDbStrategy().Read<int, Cost>(id);
+
+            Title = toEdit.Title;
+            SelectedCategory = toEdit.CostsType.Id;
+            CurrentWastes = toEdit.CurrentWaste;
+        }
+
         public void Add()
         {
             CostDbStrategy s = new CostDbStrategy();
-            s.Create(new Cost()
+            Cost c = new Cost()
             {
-                CurrentWaste = 0,
+                Id = _id,
+                CurrentWaste = CurrentWastes,
                 CostsType = new Category()
                 {
                     Id = SelectedCategory,
                     Name = CostCategories.Where(x => x.Id == SelectedCategory).First().Name
                 },
                 Title = Title
-            });
+            };
+
+            if (c.Id == 0)
+            {
+                s.Create(c);
+            }
+            else
+            {
+                s.Update(c);
+            }
         }
     }
 }

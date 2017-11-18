@@ -13,5 +13,7 @@ namespace ListOfCosts.db_client
         TResult Read<TParam, TResult>(TParam param) where TResult : class;
 
         IEnumerable<T> ReadAll();
+
+        T Update(T source);
     }
 }

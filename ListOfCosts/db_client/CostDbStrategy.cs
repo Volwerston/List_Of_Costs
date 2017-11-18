@@ -15,7 +15,7 @@ namespace ListOfCosts.db_client
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
             {
-                string cmdString = "INSERT INTO Cost VALUES(@ti, @cw, @ty, @id)";
+                string cmdString = "INSERT INTO Cost VALUES(@ti, @ty, @cw, @id)";
 
                 using (SqlCommand cmd = new SqlCommand(cmdString, con))
                 {
@@ -34,14 +34,77 @@ namespace ListOfCosts.db_client
 
         public TResult Read<TParam, TResult>(TParam param) where TResult : class
         {
-            throw new NotImplementedException();
+            dynamic costId = param;
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(@"SELECT A.Name as CostName, B.Name as TypeName, A.CurrentWaste, A.Id, B.Id as TypeId
+                                                         FROM Cost A 
+                                                         INNER JOIN CostsType B
+                                                         ON A.TypeId = B.Id
+                                                         Where (A.OwnerId=@id) AND (A.Id = @cid)", con))
+                {
+                    cmd.Parameters.AddWithValue("@id", DbContext.Identity.Id);
+                    cmd.Parameters.AddWithValue("@cid", costId);
+
+                    con.Open();
+
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        Cost toReturn = null;
+
+                        if (rdr.Read())
+                        {
+                            toReturn = new Cost()
+                            {
+                                CurrentWaste = double.Parse(rdr["CurrentWaste"].ToString()),
+                                Id = int.Parse(rdr["Id"].ToString()),
+                                Title = rdr["CostName"].ToString(),
+                                CostsType = new Category()
+                                {
+                                    Id = int.Parse(rdr["TypeId"].ToString()),
+                                    Name = rdr["TypeName"].ToString()
+                                }
+                            };
+                        }
+
+
+                        return toReturn as TResult;
+                    }
+                }
+            }
+        } 
+
+        public Cost Update(Cost source)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
+            {
+                string cmdString = @"UPDATE Cost 
+                                    Set Name=@name, TypeId=@tid, CurrentWaste=@cw
+                                    Where (OwnerId=@oid) and (Id=@id)";
+
+                using (SqlCommand cmd = new SqlCommand(cmdString, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", source.Id);
+                    cmd.Parameters.AddWithValue("@oid", DbContext.Identity.Id);
+
+                    cmd.Parameters.AddWithValue("@name", source.Title);
+                    cmd.Parameters.AddWithValue("@tid", source.CostsType.Id);
+                    cmd.Parameters.AddWithValue("@cw", source.CurrentWaste);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+
+                    return source;
+                }
+            }
         }
 
         public IEnumerable<Cost> ReadAll()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand(@"SELECT A.Name as CostName, B.Name as TypeName, A.CurrWastes, A.Id, B.Id as TypeId
+                using (SqlCommand cmd = new SqlCommand(@"SELECT A.Name as CostName, B.Name as TypeName, A.CurrentWaste, A.Id, B.Id as TypeId
                                                          FROM Cost A 
                                                          INNER JOIN CostsType B
                                                          ON A.TypeId = B.Id
@@ -58,7 +121,7 @@ namespace ListOfCosts.db_client
                         {
                             toReturn.Add(new Cost()
                             {
-                                CurrentWaste = double.Parse(rdr["CurrWastes"].ToString()),
+                                CurrentWaste = double.Parse(rdr["CurrentWaste"].ToString()),
                                 Id = int.Parse(rdr["Id"].ToString()),
                                 Title = rdr["CostName"].ToString(),
                                 CostsType = new Category()

@@ -24,6 +24,7 @@ namespace ListOfCosts
         {
             InitializeComponent();
             DataContext = new AddCostViewModel();
+            //Closing += AddCost_Closing;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

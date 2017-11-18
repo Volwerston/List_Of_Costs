@@ -21,6 +21,11 @@ namespace ListOfCosts.db_client
             throw new NotImplementedException();
         }
 
+        public Category Update(Category source)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Category> ReadAll()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))

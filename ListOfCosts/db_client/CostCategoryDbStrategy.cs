@@ -47,5 +47,10 @@ namespace ListOfCosts.db_client
                 }
             }
         }
+
+        public Category Update(Category source)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

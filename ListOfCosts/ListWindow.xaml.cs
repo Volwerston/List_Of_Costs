@@ -39,5 +39,16 @@ namespace ListOfCosts
             ac.Closing += (DataContext as ListsViewModel).Refresh;
             ac.Show();
         }
+
+        private void Edit_Cost(object sender, MouseButtonEventArgs e)
+        {
+            int costId = (int)((Border)sender).Tag;
+
+            AddCost ac = new AddCost();
+            ac.Closing += (DataContext as ListsViewModel).Refresh;
+            ac.DataContext = new AddCostViewModel(costId);
+
+            ac.Show();
+        }
     }
 }

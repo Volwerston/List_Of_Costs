@@ -32,6 +32,11 @@ namespace ListOfCosts.db_client
             }
         }
 
+        public RegisterBindingModel Update(RegisterBindingModel source)
+        {
+            throw new NotImplementedException();
+        }
+
         public TResult Read<TParam, TResult>(TParam model) where TResult : class
         {
             UserIdentity identity =default(UserIdentity);
