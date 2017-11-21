@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ListOfCosts.db_client
 {
-    interface IHasher
+    interface IHasher 
     {
         string Hash(string source);
     }
