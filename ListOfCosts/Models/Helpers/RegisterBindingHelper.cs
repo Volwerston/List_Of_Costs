@@ -14,7 +14,7 @@ namespace ListOfCosts.Models.Helpers
         public RegisterBindingHelper()
             : this(new RegisterBindingModel())
         {
-        }
+        } 
 
         public RegisterBindingHelper(RegisterBindingModel _m)
         {
