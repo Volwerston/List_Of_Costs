@@ -5,19 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
-        Title="Register" Height="400" Width="300">
+        Title="Register" Height="574" Width="772" ResizeMode="NoResize" Background="#2d3040">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Text="{Binding RegisterHelper.Model.Login}" Height="23" Margin="158,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="passwordBox" PasswordChanged="passwordBox_PasswordChanged" HorizontalAlignment="Left" Margin="158,128,0,0" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="passwordBox1" PasswordChanged="confirmPasswordBox_PasswordChanged" HorizontalAlignment="Left" Margin="158,191,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label" Content="Login" HorizontalAlignment="Left" Margin="21,48,0,0" VerticalAlignment="Top" Width="119"/>
-        <Label x:Name="label_Copy" Content="Password" HorizontalAlignment="Left" Margin="21,120,0,0" VerticalAlignment="Top" Width="119"/>
-        <Label x:Name="label_Copy1" Content="Confirm Password" HorizontalAlignment="Left" Margin="21,183,0,0" VerticalAlignment="Top" Width="119"/>
-        <Label x:Name="label1" Foreground="Red" Content="{Binding RegisterHelper.LoginValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="41,79,0,0" VerticalAlignment="Top" Width="220" Height="25"/>
-        <Label x:Name="label1_Copy" Foreground="Red" Content="{Binding RegisterHelper.PasswordValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="41,151,0,0" VerticalAlignment="Top" Width="220" Height="27"/>
-        <Label x:Name="label1_Copy1" Foreground="Red" Content="{Binding RegisterHelper.ConfirmPasswordValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="41,214,0,0" VerticalAlignment="Top" Width="220" Height="26"/>
-        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" Margin="109,289,0,0" VerticalAlignment="Top" Width="75" Click="register_Click"/>
-        <Button x:Name="button1" Content="Back to Start" HorizontalAlignment="Left" Margin="109,322,0,0" VerticalAlignment="Top" Width="75" Click="back_Click"/>
+        <Rectangle Fill="#f0eb51" HorizontalAlignment="Left" Height="260" Margin="281,93,0,0" VerticalAlignment="Top" Width="237"/>
+
+        <Label x:Name="label1" Foreground="Red" Content="{Binding RegisterHelper.LoginValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="306,153,0,0" VerticalAlignment="Top" Width="212" Height="25"/>
+        <Label x:Name="label1_Copy" Foreground="Red" Content="{Binding RegisterHelper.PasswordValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="306,230,0,0" VerticalAlignment="Top" Width="212" Height="27"/>
+        <Label x:Name="label1_Copy1" Foreground="Red" Content="{Binding RegisterHelper.ConfirmPasswordValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="306,309,0,0" VerticalAlignment="Top" Width="212" Height="26"/>
+
+        <TextBox x:Name="textBox" Text="{Binding RegisterHelper.Model.Login}" HorizontalAlignment="Left" Height="26" Margin="306,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <Label Foreground="#2d3040" x:Name="label12" Content="LOGIN:" HorizontalAlignment="Left" Margin="306,101,0,0" VerticalAlignment="Top" Width="51" FontWeight="Bold"/>
+
+        <PasswordBox x:Name="passwordBox" HorizontalContentAlignment="Center" PasswordChanged="passwordBox_PasswordChanged" HorizontalAlignment="Left" Margin="306,204,0,0" VerticalAlignment="Top" Width="182" Height="26"/>
+        <Label Foreground="#2d3040" x:Name="label_Copy3" Content="PASSWORD:" HorizontalAlignment="Left" Margin="306,178,0,0" VerticalAlignment="Top" Width="85" RenderTransformOrigin="1.053,0.344"  Background="{x:Null}" FontWeight="Bold"/>
+
+        <PasswordBox x:Name="passwordBox2" HorizontalContentAlignment="Center" PasswordChanged="confirmPasswordBox_PasswordChanged" HorizontalAlignment="Left" Margin="306,283,0,0" VerticalAlignment="Top" Width="182" Height="26"/>
+        <Label Foreground="#2d3040" x:Name="label_Copy4" Content="CONFIRM PASSWORD:" HorizontalAlignment="Left" Margin="306,257,0,0" VerticalAlignment="Top" Width="143" RenderTransformOrigin="1.053,0.344"  Background="{x:Null}" FontWeight="Bold"/>
+
+        <Button x:Name="button" Content="REGISTER" HorizontalAlignment="Left" Margin="340,358,0,0" VerticalAlignment="Top" Width="117" Click="register_Click" Height="28" FontWeight="Bold">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#f0eb51"/>
+                    <Setter Property="Foreground" Value="#2d3040"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#5b6283"/>
+                            <Setter Property="Foreground" Value="#f0eb51"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="button2" Content="X" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="122" Click="back_Click" Height="81" FontWeight="Bold">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#2d3040"/>
+                    <Setter Property="Foreground" Value="#f0eb51"/>
+                    <Setter Property="FontSize" Value="50px"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="60px"/>
+                            <Setter Property="Foreground" Value="#f0eb51"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
 
     </Grid>
 </Window>

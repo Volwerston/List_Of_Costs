@@ -105,7 +105,7 @@ namespace ListOfCosts.Models.Helpers
         {
             if (string.IsNullOrWhiteSpace(Model.Login))
             {
-                LoginValidation = "Login cannot be empty";
+                LoginValidation = "* Login cannot be empty";
                 return false;
             }
             else
@@ -119,7 +119,7 @@ namespace ListOfCosts.Models.Helpers
         {
             if (string.IsNullOrWhiteSpace(Model.Password))
             {
-                PasswordValidation = "Password cannot be empty";
+                PasswordValidation = "* Password cannot be empty";
                 return false;
             }
             else
@@ -133,7 +133,7 @@ namespace ListOfCosts.Models.Helpers
         {
             if (string.IsNullOrWhiteSpace(Model.ConfirmPassword))
             {
-                ConfirmPasswordValidation = "Password cannot be empty";
+                ConfirmPasswordValidation = "* Password cannot be empty";
                 return false;
             }
             else if(Model.ConfirmPassword != Model.Password)

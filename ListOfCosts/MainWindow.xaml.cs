@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ListOfCosts.ViewModels;
 
 namespace ListOfCosts
 {
@@ -23,6 +24,7 @@ namespace ListOfCosts
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new LoginViewModel();
         }
 
         private void register_Click(object sender, RoutedEventArgs e)
@@ -32,11 +34,36 @@ namespace ListOfCosts
             this.Close();
         }
 
-        private void login_Click(object sender, RoutedEventArgs e)
+        private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            Login l = new Login();
-            l.Show();
-            this.Close();
+            LoginViewModel model = DataContext as LoginViewModel;
+            model.SetPassword((sender as PasswordBox).Password);
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                LoginViewModel model = DataContext as LoginViewModel;
+
+                if (model.Validate())
+                {
+                    if (model.AuthenticateUser())
+                    {
+                        ListWindow w = new ListWindow();
+                        w.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password and/or login are invalid");
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
         }
     }
 }

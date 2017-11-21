@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
-        Title="ListWindow" Height="400" Width="300">
+        Title="ListWindow" Height="574" Width="772" ResizeMode="NoResize" Background="#2d3040">
     <StackPanel>
         <Button Click="Add_Resource">Додати ресурс</Button>
         <ListView Margin="10" ItemsSource="{Binding Resources}">
@@ -31,11 +31,11 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Click="Add_Cost">Додати витрати</Button>
-        <ListView Margin="10" ItemsSource="{Binding Costs}">
+        <Button Click="Add_Cost" Content="Додати витрати" Margin="0,0,-0.4,0"/>
+        <ListView Margin="10,10,9.6,10" ItemsSource="{Binding Costs}">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"></StackPanel>
+                    <StackPanel Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>

@@ -88,7 +88,7 @@ namespace ListOfCosts.Models.Helpers
         {
             if (string.IsNullOrWhiteSpace(Model.Name))
             {
-                LoginValidation = "Поле Login не може бути порожнім";
+                LoginValidation = "* Поле Login не може бути порожнім";
                 return false;
             }
             else
@@ -102,7 +102,7 @@ namespace ListOfCosts.Models.Helpers
         {
             if (string.IsNullOrWhiteSpace(Model.Password))
             {
-                PasswordValidation = "Поле Password не може бути порожнім";
+                PasswordValidation = "* Поле Password не може бути порожнім";
                 return false;
             }
             else

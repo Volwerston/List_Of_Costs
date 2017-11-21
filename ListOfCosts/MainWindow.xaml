@@ -5,9 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
-        Title="List Of Costs" Height="350" Width="525">
+        Title="List Of Costs" Height="574" Width="772" ResizeMode="NoResize" Background="#2d3040">
     <Grid>
-        <Button x:Name="button" Content="Register" HorizontalAlignment="Left" Margin="74,145,0,0" VerticalAlignment="Top" Click="register_Click" Width="164"/>
-        <Button x:Name="button1" Content="Log In" HorizontalAlignment="Left" Margin="257,145,0,0" Click="login_Click" VerticalAlignment="Top" Width="186"/>
+
+        <Rectangle Fill="#f0eb51" HorizontalAlignment="Left" Height="236" Margin="279,107,0,0" VerticalAlignment="Top" Width="237"/>
+
+        <TextBox x:Name="textBox" HorizontalContentAlignment="Center" Text="{Binding LoginHelper.Model.Name}" HorizontalAlignment="Left" Height="26" Margin="308,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <Label Foreground="#2d3040" x:Name="label" Content="LOGIN:" HorizontalAlignment="Left" Margin="308,138,0,0" VerticalAlignment="Top" Width="51" FontWeight="Bold"/>
+        
+
+        <Label x:Name="label1_Copy" Foreground="Red" Content="{Binding LoginHelper.LoginValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="304,189,0,0" VerticalAlignment="Top" Width="200" Height="24" FontSize="10"/>
+        <Label x:Name="label1_Copy1" Foreground="Red" Content="{Binding LoginHelper.PasswordValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="304,262,0,0" VerticalAlignment="Top" Width="200" Height="24" FontSize="10"/>
+        <PasswordBox x:Name="passwordBox" HorizontalContentAlignment="Center" PasswordChanged="passwordBox_PasswordChanged" HorizontalAlignment="Left" Margin="308,236,0,0" VerticalAlignment="Top" Width="182" Height="26"/>
+        <Label Foreground="#2d3040" x:Name="label_Copy" Content="PASSWORD:" HorizontalAlignment="Left" Margin="308,213,0,0" VerticalAlignment="Top" Width="85" RenderTransformOrigin="1.053,0.344"  Background="{x:Null}" FontWeight="Bold"/>
+
+        <Button Foreground="#f0eb51" x:Name="button_login1" Content="LOG IN" HorizontalAlignment="Left" Margin="342,286,0,0" VerticalAlignment="Top" Width="117" Click="button_Click" Height="28" FontWeight="Bold">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#5b6283"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#2d3040"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="register" Click="register_Click" Content="REGISTER" HorizontalAlignment="Left" Margin="333,357,0,0" VerticalAlignment="Top" Width="136" Height="50" FontWeight="Bold">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#f0eb51"/>
+                    <Setter Property="Foreground" Value="#2d3040"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#5b6283"/>
+                            <Setter Property="Foreground" Value="#f0eb51"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+
     </Grid>
 </Window>
