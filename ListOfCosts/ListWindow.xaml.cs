@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace ListOfCosts
 {
-    /// <summary>
-    /// Interaction logic for ListWindow.xaml
-    /// </summary>
     public partial class ListWindow : Window
     {
         public ListWindow()
@@ -58,6 +55,54 @@ namespace ListOfCosts
             ac.Closing += (DataContext as ListsViewModel).Refresh;
 
             ac.Show();
+        }
+
+        private void StackPanel_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effects = DragDropEffects.Move;
+        }
+
+        private void StackPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            base.OnMouseMove(e);
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DataObject data = new DataObject();
+                data.SetData("Object", this);
+                data.SetData(DataFormats.StringFormat, sender);
+
+
+
+                DragDrop.DoDragDrop(this, data, DragDropEffects.Copy | DragDropEffects.Move);
+            }
+        }
+
+        private void StackPanel_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
+            base.OnGiveFeedback(e);
+            if (e.Effects.HasFlag(DragDropEffects.Copy))
+            {
+                Mouse.SetCursor(Cursors.Cross);
+            }
+            else if (e.Effects.HasFlag(DragDropEffects.Move))
+            {
+                Mouse.SetCursor(Cursors.Pen);
+            }
+            else
+            {
+                Mouse.SetCursor(Cursors.No);
+            }
+            e.Handled = true;
+        }
+
+        private void StackPanel_Drop(object sender, DragEventArgs e)
+        {
+            int resourceId = (int)((StackPanel)e.Data.GetData(DataFormats.StringFormat)).Tag;
+            int wasteId = (int)((StackPanel)sender).Tag;
+
+            MakeTransaction mt = new MakeTransaction(resourceId, wasteId);
+            mt.Closing += (DataContext as ListsViewModel).Refresh;
+            mt.Show();
         }
     }
 }

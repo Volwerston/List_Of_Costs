@@ -81,18 +81,24 @@
     <Compile Include="db_client\MD5Hasher.cs" />
     <Compile Include="db_client\ResourceCategoryDbStrategy.cs" />
     <Compile Include="db_client\ResourceDbStrategy.cs" />
+    <Compile Include="db_client\TransactionDbStrategy.cs" />
     <Compile Include="db_client\UserDbStrategy.cs" />
     <Compile Include="ListWindow.xaml.cs">
       <DependentUpon>ListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MakeTransaction.xaml.cs">
+      <DependentUpon>MakeTransaction.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\DTO\Category.cs" />
     <Compile Include="Models\DTO\Cost.cs" />
     <Compile Include="Models\DTO\LoginBindingModel.cs" />
     <Compile Include="Models\DTO\RegisterBindingModel.cs" />
     <Compile Include="Models\DTO\Resource.cs" />
+    <Compile Include="Models\DTO\Transaction.cs" />
     <Compile Include="Models\DTO\UserIdentity.cs" />
     <Compile Include="Models\Helpers\LoginBindingHelper.cs" />
     <Compile Include="Models\Helpers\RegisterBindingHelper.cs" />
+    <Compile Include="Models\Helpers\TransactionHelper.cs" />
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
@@ -100,6 +106,7 @@
     <Compile Include="ViewModels\AddResourceViewModel.cs" />
     <Compile Include="ViewModels\ListsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MakeTransactionViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Page Include="AddCost.xaml">
       <SubType>Designer</SubType>
@@ -125,6 +132,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MakeTransaction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Register.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

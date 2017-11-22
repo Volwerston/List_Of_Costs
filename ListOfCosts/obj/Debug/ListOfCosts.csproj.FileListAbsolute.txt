@@ -24,7 +24,6 @@ C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\bin\Debug\ListOfCost
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\AddCost.g.cs
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\AddResource.g.cs
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\ListWindow.g.cs
-C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\Login.g.cs
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\MainWindow.g.cs
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\Register.g.cs
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\App.g.cs
@@ -33,7 +32,6 @@ C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\ListOfCost
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\AddCost.baml
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\AddResource.baml
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\ListWindow.baml
-C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\Login.baml
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\MainWindow.baml
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\Register.baml
 C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\ListOfCosts.g.resources
@@ -72,3 +70,10 @@ C:\Users\gercog\Desktop\List_Of_Costs\ListOfCosts\bin\Debug\EntityFramework.SqlS
 C:\Users\gercog\Desktop\List_Of_Costs\ListOfCosts\bin\Debug\EntityFramework.xml
 C:\Users\gercog\Desktop\List_Of_Costs\ListOfCosts\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\gercog\Desktop\List_Of_Costs\ListOfCosts\obj\Debug\ListOfCosts.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\bin\Debug\EntityFramework.dll
+C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\bin\Debug\EntityFramework.xml
+C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\ListOfCosts.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\MakeTransaction.g.cs
+C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\MakeTransaction.baml

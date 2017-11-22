@@ -18,7 +18,7 @@
                 <DataTemplate>
                     <WrapPanel>
                         <Border BorderBrush="Black" BorderThickness="1"  MouseLeftButtonUp="Edit_Resource" Tag="{Binding Id}">
-                            <StackPanel>
+                            <StackPanel DragEnter="StackPanel_DragEnter" Tag="{Binding Id}" GiveFeedback="StackPanel_GiveFeedback" MouseMove="StackPanel_MouseMove">
                                 <TextBlock Text="Title: " />
                                 <TextBlock Text="{Binding Title}" FontWeight="Bold" />
                                 <TextBlock Text="Type: " />
@@ -42,7 +42,7 @@
                 <DataTemplate>
                     <WrapPanel>
                         <Border BorderBrush="Black"  BorderThickness="1" MouseLeftButtonUp="Edit_Cost" Tag="{Binding Id}">
-                            <StackPanel>
+                            <StackPanel AllowDrop="True" Tag="{Binding Id}" Drop="StackPanel_Drop">
                                 <TextBlock Text="Title: " />
                                 <TextBlock Text="{Binding Title}" FontWeight="Bold" />
                                 <TextBlock Text="Type: " />
