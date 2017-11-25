@@ -104,5 +104,60 @@ namespace ListOfCosts
             mt.Closing += (DataContext as ListsViewModel).Refresh;
             mt.Show();
         }
+
+        private void menuOpen(object sender, RoutedEventArgs e)
+        {
+        
+            if (menuBackground.Visibility == Visibility.Hidden)
+            {
+                menuBackground.Visibility = Visibility.Visible;
+                menuBtn1.Visibility = Visibility.Hidden;
+                menuBtn2.Visibility = Visibility.Visible;
+                helpBtn.Visibility = Visibility.Visible;
+                contactBtn.Visibility = Visibility.Visible;
+                logoutBtn.Visibility = Visibility.Visible;
+            }
+            else if(menuBackground.Visibility == Visibility.Visible)
+            {
+                menuBtn1.Visibility = Visibility.Visible;
+                menuBtn2.Visibility = Visibility.Hidden;
+                menuBackground.Visibility = Visibility.Hidden;
+                helpBtn.Visibility = Visibility.Hidden;
+                contactBtn.Visibility = Visibility.Hidden;
+                logoutBtn.Visibility = Visibility.Hidden;
+
+            }
+        }
+
+        private void openHelp(object sender, RoutedEventArgs e)
+        {
+            addBackground.Visibility = Visibility.Visible;
+            helpLabel.Visibility = Visibility.Visible;
+            closeBtn.Visibility = Visibility.Visible;
+            contactLabel.Visibility = Visibility.Hidden;
+        }
+
+        private void closeAddMenu(object sender, RoutedEventArgs e)
+        {
+            addBackground.Visibility = Visibility.Hidden;
+            helpLabel.Visibility = Visibility.Hidden;
+            contactLabel.Visibility = Visibility.Hidden;
+            closeBtn.Visibility = Visibility.Hidden;
+        }
+
+        private void openContact(object sender, RoutedEventArgs e)
+        {
+            addBackground.Visibility = Visibility.Visible;
+            contactLabel.Visibility = Visibility.Visible;
+            closeBtn.Visibility = Visibility.Visible;
+            helpLabel.Visibility = Visibility.Hidden;
+        }
+
+        private void logOut(object sender, RoutedEventArgs e)
+        {       
+                MainWindow w = new MainWindow();
+                w.Show();
+                this.Close();
+        }
     }
 }

@@ -6,54 +6,197 @@
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
         Title="ListWindow" Height="574" Width="772" ResizeMode="NoResize" Background="#2d3040">
-    <StackPanel>
-        <Button Click="Add_Resource">Додати ресурс</Button>
-        <ListView Margin="10" ItemsSource="{Binding Resources}">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"></StackPanel>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <Border BorderBrush="Black" BorderThickness="1"  MouseLeftButtonUp="Edit_Resource" Tag="{Binding Id}">
-                            <StackPanel DragEnter="StackPanel_DragEnter" Tag="{Binding Id}" GiveFeedback="StackPanel_GiveFeedback" MouseMove="StackPanel_MouseMove">
-                                <TextBlock Text="Title: " />
-                                <TextBlock Text="{Binding Title}" FontWeight="Bold" />
-                                <TextBlock Text="Type: " />
-                                <TextBlock Text="{Binding ResourceType.Name}" FontWeight="Bold" />
-                                <TextBlock Text="Amount: " />
-                                <TextBlock Text="{Binding Amount}" FontWeight="Bold" />
-                            </StackPanel>
-                        </Border>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button Click="Add_Cost" Content="Додати витрати" Margin="0,0,-0.4,0"/>
-        <ListView Margin="10,10,9.6,10" ItemsSource="{Binding Costs}">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"/>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <WrapPanel>
-                        <Border BorderBrush="Black"  BorderThickness="1" MouseLeftButtonUp="Edit_Cost" Tag="{Binding Id}">
-                            <StackPanel AllowDrop="True" Tag="{Binding Id}" Drop="StackPanel_Drop">
-                                <TextBlock Text="Title: " />
-                                <TextBlock Text="{Binding Title}" FontWeight="Bold" />
-                                <TextBlock Text="Type: " />
-                                <TextBlock Text="{Binding CostsType.Name}" FontWeight="Bold" />
-                                <TextBlock Text="Current wastes: " />
-                                <TextBlock Text="{Binding CurrentWaste}" FontWeight="Bold" />
-                            </StackPanel>
-                        </Border>
-                    </WrapPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackPanel>
+    <Grid>
+
+        <StackPanel>
+
+            <Button Click="Add_Resource" Content="+" Margin="553,75,177.6,0" Foreground="#f0eb51" Height="43" Background="{x:Null}" FontWeight="Bold" FontSize="36" BorderBrush="{x:Null}" RenderTransformOrigin="-0.042,0.498"/>
+            <ListView Margin="167,0,167,10"  ItemsSource="{Binding Resources}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Background="#2d3040" Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel >
+                            <Border BorderThickness="3" Background="#f0eb51" Width="120" Height="120" CornerRadius="100" MouseLeftButtonUp="Edit_Resource" Tag="{Binding Id}" BorderBrush="#5b6283">
+                                <StackPanel DragEnter="StackPanel_DragEnter" Tag="{Binding Id}" GiveFeedback="StackPanel_GiveFeedback" MouseMove="StackPanel_MouseMove">
+
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Title}" FontWeight="Bold" Margin="0,12,0,0"/>
+                                    <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="./images/wallet.png" Width="50" Height="50"/>
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding ResourceType.Name}" FontWeight="Bold" />
+
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Amount}" FontWeight="Bold" />
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Rectangle Fill="#5b6283" Height="10" Margin="10,0,9.6,0"></Rectangle>
+            <Button Click="Add_Cost" Content="+" Margin="720,0,9.6,0" Height="44" Foreground="#f0eb51" Background="{x:Null}" FontWeight="Bold" FontSize="36" BorderBrush="{x:Null}"/>
+            <ListView Margin="10,0,9.6,10" ItemsSource="{Binding Costs}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel Background="#f0eb51">
+                            <Border Width="100" Height="80" MouseLeftButtonUp="Edit_Cost" Tag="{Binding Id}">
+                                <StackPanel AllowDrop="True" Tag="{Binding Id}" Drop="StackPanel_Drop">
+
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Title}" FontWeight="Bold" />
+                                    <Image VerticalAlignment="Center" HorizontalAlignment="Center" Source="./images/vegetables.png" Width="40" Height="40"/>
+
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding CurrentWaste}" FontWeight="Bold" />
+                                </StackPanel>
+                            </Border>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackPanel>
+        <Rectangle Visibility="Hidden" x:Name="menuBackground" Fill="#FF21242F" HorizontalAlignment="Left" Width="251" Margin="0,0,0,-0.2"/>
+
+        <Rectangle Visibility="Hidden" x:Name="addBackground" Fill="#FF21242F" HorizontalAlignment="Left" Margin="286,48,0,52.8" Width="426"/>
+        <Label Visibility="Hidden" x:Name="helpLabel" Foreground="#f0eb51" Content="HELP" HorizontalAlignment="Left" Height="86" Margin="420,33,0,0" VerticalAlignment="Top" Width="185" Background="{x:Null}" FontSize="72" FontWeight="Bold"/>
+
+        <Label Visibility="Hidden"  x:Name="contactLabel" Foreground="#f0eb51" Content="CONTACT" HorizontalAlignment="Left" Height="86" Margin="364,33,0,0" VerticalAlignment="Top" Width="310" Background="{x:Null}" FontSize="60" FontWeight="Bold"/>
+
+
+        <Button Visibility="Hidden" x:Name="closeBtn" Foreground="#f0eb51" Background="{x:Null}" Content="&#x2716;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" FontWeight="Bold" Margin="658,48,0,0" Click="closeAddMenu" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="FontSize" Value="35"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="40"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="menuBtn1" Foreground="#f0eb51" Background="{x:Null}" Click="menuOpen" Content="&#x2610;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" FontWeight="Bold" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="FontSize" Value="35"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="40"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button Visibility="Hidden" x:Name="menuBtn2" Foreground="#f0eb51" Background="{x:Null}" Click="menuOpen" Content="&#x2612;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" FontWeight="Bold" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="FontSize" Value="35"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="40"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="helpBtn" Visibility="Hidden" Foreground="#f0eb51" Background="{x:Null}" Content="HELP" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="54" FontWeight="Bold" Margin="0,99,0,0" Click="openHelp" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="FontSize" Value="35"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="40"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="contactBtn" Visibility="Hidden" Foreground="#f0eb51" Background="{x:Null}" Content="CONTACT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Height="54" FontWeight="Bold" Margin="0,153,0,0" Click="openContact" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="FontSize" Value="35"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="40"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="logoutBtn" Visibility="Hidden" Foreground="#f0eb51" Background="{x:Null}" Content="LOG OUT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Height="54" FontWeight="Bold" Margin="0,207,0,0" Click="logOut" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="FontSize" Value="35"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="40"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+    </Grid>
 </Window>
