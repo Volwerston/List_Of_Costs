@@ -5,17 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
-        Title="AddResource" Height="250" Width="300">
+        Title="Add Resource" Height="230.137" Width="305.479" ResizeMode="NoResize" Background="#FF21242F">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="Назва ресурсу:" VerticalAlignment="Top" Height="23"/>
+        <TextBlock Foreground="#f0eb51" x:Name="textBlock" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="Resource name :" VerticalAlignment="Top" Height="23" FontWeight="Bold" FontSize="13"/>
         <TextBox x:Name="textBox" Text="{Binding Title}" HorizontalAlignment="Left" Height="23" Margin="127,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5"/>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="9,66,0,0" TextWrapping="Wrap" Text="Категорія:" VerticalAlignment="Top" Height="23"/>
+        <TextBlock Foreground="#f0eb51" x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,65,0,0" TextWrapping="Wrap" Text="Category :" VerticalAlignment="Top" Height="23" FontSize="13" FontWeight="Bold"/>
         <ComboBox x:Name="comboBox" DisplayMemberPath="Name" 
           SelectedValuePath="Id" SelectedValue="{Binding SelectedCategory}" ItemsSource="{Binding Categories}" HorizontalAlignment="Left" Margin="127,66,0,0" VerticalAlignment="Top" Width="157">
         </ComboBox>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" Text="Сума:" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" Text="{Binding Amount}" HorizontalAlignment="Left" Height="23" Margin="127,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
-        <Button x:Name="button" Content="Додати" HorizontalAlignment="Left" Margin="75,162,0,0" VerticalAlignment="Top" Width="146" Click="button_Click"/>
-
+        <TextBlock Foreground="#f0eb51" x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" FontSize="13" FontWeight="Bold" Width="131" Text="Amount :"/>
+        <TextBox x:Name="textBox_Copy" Text="{Binding Amount}" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="127,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="register" Click="button_Click" Content="ADD" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="91" Height="26" FontWeight="Bold" Margin="105,156,0,0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#f0eb51"/>
+                    <Setter Property="Foreground" Value="#2d3040"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#5b6283"/>
+                            <Setter Property="Foreground" Value="#f0eb51"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
+    
 </Window>

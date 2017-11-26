@@ -116,6 +116,7 @@ namespace ListOfCosts
                 helpBtn.Visibility = Visibility.Visible;
                 contactBtn.Visibility = Visibility.Visible;
                 logoutBtn.Visibility = Visibility.Visible;
+                statisticsBtn.Visibility = Visibility.Visible;
             }
             else if(menuBackground.Visibility == Visibility.Visible)
             {
@@ -125,6 +126,7 @@ namespace ListOfCosts
                 helpBtn.Visibility = Visibility.Hidden;
                 contactBtn.Visibility = Visibility.Hidden;
                 logoutBtn.Visibility = Visibility.Hidden;
+                statisticsBtn.Visibility = Visibility.Hidden;
 
             }
         }

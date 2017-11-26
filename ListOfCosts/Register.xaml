@@ -46,12 +46,12 @@
             </Button.Style>
         </Button>
 
-        <Button x:Name="button2" Content="X" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="122" Click="back_Click" Height="81" FontWeight="Bold">
+        <Button x:Name="button2" Content="&#x2716;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="83" Click="back_Click" Height="81" FontWeight="Bold">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="#2d3040"/>
                     <Setter Property="Foreground" Value="#f0eb51"/>
-                    <Setter Property="FontSize" Value="50px"/>
+                    <Setter Property="FontSize" Value="40px"/>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">
@@ -63,7 +63,7 @@
                     </Setter>
                     <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="FontSize" Value="60px"/>
+                            <Setter Property="FontSize" Value="50px"/>
                             <Setter Property="Foreground" Value="#f0eb51"/>
                         </Trigger>
                     </Style.Triggers>

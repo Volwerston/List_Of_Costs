@@ -134,7 +134,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="helpBtn" Visibility="Hidden" Foreground="#f0eb51" Background="{x:Null}" Content="HELP" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="54" FontWeight="Bold" Margin="0,99,0,0" Click="openHelp" >
+        <Button x:Name="helpBtn" Visibility="Hidden"  Foreground="#f0eb51" Background="{x:Null}" Content="HELP" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="54" FontWeight="Bold" Margin="0,89,0,0" Click="openHelp" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="FontSize" Value="35"/>
@@ -155,7 +155,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="contactBtn" Visibility="Hidden" Foreground="#f0eb51" Background="{x:Null}" Content="CONTACT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Height="54" FontWeight="Bold" Margin="0,153,0,0" Click="openContact" >
+        <Button x:Name="contactBtn" Visibility="Hidden"  Foreground="#f0eb51" Background="{x:Null}" Content="CONTACT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" Height="54" FontWeight="Bold" Margin="2,143,0,0" Click="openContact" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="FontSize" Value="35"/>
@@ -176,7 +176,28 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="logoutBtn" Visibility="Hidden" Foreground="#f0eb51" Background="{x:Null}" Content="LOG OUT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="176" Height="54" FontWeight="Bold" Margin="0,207,0,0" Click="logOut" >
+        <Button x:Name="logoutBtn" Visibility="Hidden"  Foreground="#f0eb51" Background="{x:Null}" Content="LOG OUT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Height="54" FontWeight="Bold" Margin="0,251,0,0" Click="logOut" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="FontSize" Value="35"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="40"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="statisticsBtn" Visibility="Hidden"  Foreground="#f0eb51" Background="{x:Null}" Content="STATISTIC" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" Height="54" FontWeight="Bold" Margin="2,197,0,0" Click="logOut" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="FontSize" Value="35"/>
