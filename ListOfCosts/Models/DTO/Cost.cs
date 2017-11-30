@@ -11,7 +11,7 @@ namespace ListOfCosts.Models.DTO
         public int Id { get; set; }
         public string Title { get; set; }
         public double CurrentWaste { get; set; }
-
         public Category CostsType { get; set; }
+        public int OwnerId { get; set; }
     }
 }

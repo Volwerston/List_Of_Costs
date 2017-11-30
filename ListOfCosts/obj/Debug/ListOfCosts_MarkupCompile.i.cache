@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\obj\Debug\
+D:\ListOfCost\ListOfCosts\obj\Debug\
 ListOfCosts
 none
 false
 DEBUG;TRACE
-C:\Users\User\Desktop\List_Of_Costs\ListOfCosts\ListOfCosts\App.xaml
+D:\ListOfCost\ListOfCosts\App.xaml
 6114455396
 
-421250822377
-191054119998
+441155982762
+20-1059495915
 AddCost.xaml;AddResource.xaml;ListWindow.xaml;MainWindow.xaml;MakeTransaction.xaml;Register.xaml;
 
 False

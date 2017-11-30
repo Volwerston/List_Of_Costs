@@ -104,7 +104,7 @@ namespace ListOfCosts.db_client
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand(@"SELECT A.Name as CostName, B.Name as TypeName, A.CurrentWaste, A.Id, B.Id as TypeId
+                using (SqlCommand cmd = new SqlCommand(@"SELECT A.Name as CostName, B.Name as TypeName, A.CurrentWaste, A.Id, A.OwnerId, B.Id as TypeId
                                                          FROM Cost A 
                                                          INNER JOIN CostsType B
                                                          ON A.TypeId = B.Id
@@ -126,6 +126,7 @@ namespace ListOfCosts.db_client
                                 CurrentWaste = double.Parse(rdr["CurrentWaste"].ToString()),
                                 Id = int.Parse(rdr["Id"].ToString()),
                                 Title = rdr["CostName"].ToString(),
+                                OwnerId = int.Parse(rdr["OwnerId"].ToString()),
                                 CostsType = new Category()
                                 {
                                     Id = int.Parse(rdr["TypeId"].ToString()),

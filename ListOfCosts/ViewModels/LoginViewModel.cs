@@ -45,6 +45,9 @@ namespace ListOfCosts.ViewModels
             if (identity != null)
             {
                 DbContext.Identity = identity;
+
+                LogHelper.CheckLog(identity.Login);
+
                 return true;
             }
             else

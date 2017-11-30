@@ -41,6 +41,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -91,11 +95,13 @@
     </Compile>
     <Compile Include="Models\DTO\Category.cs" />
     <Compile Include="Models\DTO\Cost.cs" />
+    <Compile Include="Models\DTO\Log.cs" />
     <Compile Include="Models\DTO\LoginBindingModel.cs" />
     <Compile Include="Models\DTO\RegisterBindingModel.cs" />
     <Compile Include="Models\DTO\Resource.cs" />
     <Compile Include="Models\DTO\Transaction.cs" />
     <Compile Include="Models\DTO\UserIdentity.cs" />
+    <Compile Include="Models\Helpers\LogHelper.cs" />
     <Compile Include="Models\Helpers\LoginBindingHelper.cs" />
     <Compile Include="Models\Helpers\RegisterBindingHelper.cs" />
     <Compile Include="Models\Helpers\TransactionHelper.cs" />
