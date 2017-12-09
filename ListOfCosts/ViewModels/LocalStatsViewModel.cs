@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ListOfCosts.db_client;
+using ListOfCosts.Models.DTO;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -27,11 +29,6 @@ namespace ListOfCosts.ViewModels
         {
             get { return (ObservableCollection<string>)GetValue(MonthProperty); }
             set { SetValue(MonthProperty, value); }
-        }
-
-        public void Search()
-        {
-            throw new NotImplementedException();
         }
 
         public static readonly DependencyProperty MonthProperty =
@@ -74,6 +71,14 @@ namespace ListOfCosts.ViewModels
         public static readonly DependencyProperty SelectedMonthProperty =
             DependencyProperty.Register("SelectedMonth", typeof(string), typeof(LocalStatsViewModel), new PropertyMetadata("Січень"));
 
+        public ObservableCollection<Transaction> FoundTransactions
+        {
+            get { return (ObservableCollection<Transaction>)GetValue(FoundTransactionsProperty); }
+            set { SetValue(FoundTransactionsProperty, value); }
+        }
+
+        public static readonly DependencyProperty FoundTransactionsProperty =
+            DependencyProperty.Register("FoundTransactions", typeof(ObservableCollection<Transaction>), typeof(LocalStatsViewModel), new PropertyMetadata(new ObservableCollection<Transaction>()));
 
         public LocalStatsViewModel(int _costId)
         {
@@ -93,6 +98,19 @@ namespace ListOfCosts.ViewModels
             }
 
             costId = _costId;
+        }
+
+
+        public void Search()
+        {
+            FoundTransactions.Clear();
+
+            int month = this.GetMonthNumber(SelectedMonth);
+
+            foreach(var transaction in this.SearchTransactions(SelectedYear, month, SelectedDate, costId))
+            {
+                FoundTransactions.Add(transaction);
+            }
         }
 
 
@@ -141,6 +159,50 @@ namespace ListOfCosts.ViewModels
             }
 
             return toReturn;
+        }
+
+        private List<Transaction> SearchTransactions(int year, int month, int date, int costId)
+        {
+            Tuple<int, int, int, int> criteria = new Tuple<int, int, int, int>(year, month, date, costId);
+
+            TransactionDbStrategy dbs = new TransactionDbStrategy();
+
+            List<Transaction> transactions = dbs.Read<Tuple<int, int, int, int>, List<Transaction>>(criteria);
+
+            return transactions;
+        }
+
+        private int GetMonthNumber(string month)
+        {
+            switch (month)
+            {
+                case "Січень":
+                    return 1;
+                case "Лютий":
+                    return 2;
+                case "Березень":
+                    return 3;
+                case "Квітень":
+                    return 4;
+                case "Травень":
+                    return 5;
+                case "Червень":
+                    return 6;
+                case "Липень":
+                    return 7;
+                case "Серпень":
+                    return 8;
+                case "Вересень":
+                    return 9;
+                case "Жовтень":
+                    return 10;
+                case "Листопад":
+                    return 11;
+                case "Грудень":
+                    return 12;
+                default:
+                    throw new Exception("Wrong month");
+            }
         }
 
         

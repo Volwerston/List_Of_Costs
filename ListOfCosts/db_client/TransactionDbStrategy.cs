@@ -34,7 +34,38 @@ namespace ListOfCosts.db_client
 
         public TResult Read<TParam, TResult>(TParam param) where TResult : class
         {
-            throw new NotImplementedException();
+            Tuple<int, int, int, int> toSearch = param as Tuple<int, int, int, int>;
+            List<Transaction> toReturn = new List<Transaction>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
+            {
+                using(SqlCommand cmd = new SqlCommand("exec spSearchTransactions @y, @m, @d, @id", con))
+                {
+
+                    cmd.Parameters.AddWithValue("@y", toSearch.Item1);
+                    cmd.Parameters.AddWithValue("@m", toSearch.Item2);
+                    cmd.Parameters.AddWithValue("@d", toSearch.Item3);
+                    cmd.Parameters.AddWithValue("@id", toSearch.Item4);
+
+                    con.Open();
+
+                    using (SqlDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            toReturn.Add(new Transaction()
+                            {
+                                Amount = int.Parse(rdr["Amount"].ToString()),
+                                Comment = rdr["Comment"].ToString(),
+                                Date = DateTime.Parse(rdr["DateTime"].ToString()),
+                                Id = int.Parse(rdr["Id"].ToString())
+                            });
+                        }
+                    } 
+                }
+            }
+
+                return toReturn as TResult;
         }
 
         public IEnumerable<Transaction> ReadAll()
