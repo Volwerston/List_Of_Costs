@@ -41,7 +41,7 @@ namespace ListOfCosts
         {
             int costId = (int)((Border)sender).Tag;
 
-            AddCost ac = new AddCost(costId);
+            AddCost ac = new AddCost(costId, true);
             ac.Closing += (DataContext as ListsViewModel).Refresh;
 
             ac.Show();

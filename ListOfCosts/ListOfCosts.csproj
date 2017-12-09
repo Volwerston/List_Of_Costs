@@ -90,6 +90,9 @@
     <Compile Include="ListWindow.xaml.cs">
       <DependentUpon>ListWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LocalStats.xaml.cs">
+      <DependentUpon>LocalStats.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MakeTransaction.xaml.cs">
       <DependentUpon>MakeTransaction.xaml</DependentUpon>
     </Compile>
@@ -111,6 +114,7 @@
     <Compile Include="ViewModels\AddCostViewModel.cs" />
     <Compile Include="ViewModels\AddResourceViewModel.cs" />
     <Compile Include="ViewModels\ListsViewModel.cs" />
+    <Compile Include="ViewModels\LocalStatsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MakeTransactionViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
@@ -123,6 +127,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LocalStats.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

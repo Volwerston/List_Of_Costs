@@ -137,3 +137,35 @@ D:\ListOfCost\ListOfCosts\obj\Debug\Register.baml
 D:\ListOfCost\ListOfCosts\obj\Debug\ListOfCosts.g.resources
 D:\ListOfCost\ListOfCosts\obj\Debug\ListOfCosts.Properties.Resources.resources
 D:\ListOfCost\ListOfCosts\obj\Debug\ListOfCosts.csproj.GenerateResource.Cache
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\bin\Debug\ListOfCosts.exe.config
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\ListOfCosts.exe
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\ListOfCosts.pdb
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\bin\Debug\ListOfCosts.exe
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\bin\Debug\ListOfCosts.pdb
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\bin\Debug\EntityFramework.dll
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\bin\Debug\EntityFramework.xml
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\ListOfCosts.csprojResolveAssemblyReference.cache
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\AddCost.g.cs
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\AddResource.g.cs
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\ListWindow.g.cs
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\MainWindow.g.cs
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\MakeTransaction.g.cs
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\Register.g.cs
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\App.g.cs
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\ListOfCosts_MarkupCompile.cache
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\ListOfCosts_MarkupCompile.lref
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\AddCost.baml
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\AddResource.baml
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\ListWindow.baml
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\MainWindow.baml
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\MakeTransaction.baml
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\Register.baml
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\ListOfCosts.g.resources
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\ListOfCosts.Properties.Resources.resources
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\ListOfCosts.csproj.GenerateResource.Cache
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\LocalStats.g.cs
+C:\Users\Юра\Desktop\InterpolationMethods (6)\ListOfCosts\obj\Debug\LocalStats.baml

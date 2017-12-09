@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
-        Title="Add Cost" Height="230.137" Width="305.479" ResizeMode="NoResize" Background="#FF21242F">
+        Title="Add Cost" Height="250.137" Width="305.479" ResizeMode="NoResize" Background="#FF21242F">
     <Grid Margin="0,0,3.6,-0.2">
         <TextBlock Foreground="#f0eb51" x:Name="textBlock" HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" Text="Name of cost :" VerticalAlignment="Top" Height="23" FontWeight="Bold" FontSize="13"/>
         <TextBox x:Name="textBox" Text="{Binding Title}" HorizontalAlignment="Left" Height="23" Margin="127,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5"/>
@@ -16,6 +16,29 @@
         <TextBlock Foreground="#f0eb51" x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" FontSize="13" FontWeight="Bold" Width="131" Text="Current spending :"/>
         <TextBox x:Name="textBox_Copy" Text="{Binding CurrentWastes}" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="127,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5"/>
         <Button x:Name="register" Click="button_Click" Content="ADD" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="91" Height="26" FontWeight="Bold" Margin="108,156,0,0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#f0eb51"/>
+                    <Setter Property="Foreground" Value="#2d3040"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#5b6283"/>
+                            <Setter Property="Foreground" Value="#f0eb51"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="stats" Click="stats_Click" Content="STATISTICS" IsEnabled="{Binding ViewStatistics}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="91" Height="26" FontWeight="Bold" Margin="108,187,0,-10.133">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="#f0eb51"/>

@@ -51,9 +51,21 @@ namespace ListOfCosts.ViewModels
         public static readonly DependencyProperty CurrentWastesProperty =
             DependencyProperty.Register("CurrentWastes", typeof(double), typeof(AddCostViewModel), new PropertyMetadata(0.00));
 
-
-        public AddCostViewModel()
+        public bool ViewStatistics
         {
+            get { return (bool)GetValue(ViewStatisticsProperty); }
+            set { SetValue(ViewStatisticsProperty, value); }
+        }
+
+        public static readonly DependencyProperty ViewStatisticsProperty =
+            DependencyProperty.Register("ViewStatistics", typeof(bool), typeof(AddCostViewModel), new PropertyMetadata(false));
+
+
+
+        public AddCostViewModel(bool _viewStats = false)
+        {
+            ViewStatistics = _viewStats;
+
             CostCategoryDbStrategy s = new CostCategoryDbStrategy();
 
             foreach (var c in s.ReadAll())
@@ -62,8 +74,10 @@ namespace ListOfCosts.ViewModels
             }
         }
 
-        public AddCostViewModel(int id)
+        public AddCostViewModel(int id, bool _viewStats)
         {
+            ViewStatistics = _viewStats;
+
             _id = id;
 
             CostCategoryDbStrategy s = new CostCategoryDbStrategy();

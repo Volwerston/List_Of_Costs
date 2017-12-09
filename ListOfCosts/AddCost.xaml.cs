@@ -20,6 +20,8 @@ namespace ListOfCosts
     /// </summary>
     public partial class AddCost : Window
     {
+        private readonly int _costId = 0;
+
         public AddCost()
         {
             Closing += AddCost_Closing;
@@ -27,11 +29,13 @@ namespace ListOfCosts
             DataContext = new AddCostViewModel();
         }
 
-        public AddCost(int costId)
+        public AddCost(int costId, bool viewStats)
         {
+            _costId = costId;
+
             Closing += AddCost_Closing;
             InitializeComponent();
-            DataContext = new AddCostViewModel(costId);
+            DataContext = new AddCostViewModel(costId, viewStats);
         }
 
         private void AddCost_Closing(object sender, EventArgs e)
@@ -52,6 +56,12 @@ namespace ListOfCosts
             {
                 MessageBox.Show(exc.Message);
             }
+        }
+
+        private void stats_Click(object sender, RoutedEventArgs e)
+        {
+            LocalStats ls = new LocalStats(_costId);
+            ls.Show();
         }
     }
 }
