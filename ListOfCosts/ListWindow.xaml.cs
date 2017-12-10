@@ -1,4 +1,5 @@
-﻿using ListOfCosts.ViewModels;
+﻿using ListOfCosts;
+using ListOfCosts.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -153,6 +154,12 @@ namespace ListOfCosts
             contactLabel.Visibility = Visibility.Visible;
             closeBtn.Visibility = Visibility.Visible;
             helpLabel.Visibility = Visibility.Hidden;
+        }
+
+        private void openStatistic(object sender, RoutedEventArgs e)
+        {
+            GlobalStats gs = new GlobalStats();
+            gs.Show();
         }
 
         private void logOut(object sender, RoutedEventArgs e)

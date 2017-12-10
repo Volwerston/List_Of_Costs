@@ -197,7 +197,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="statisticsBtn" Visibility="Hidden"  Foreground="#f0eb51" Background="{x:Null}" Content="STATISTIC" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" Height="54" FontWeight="Bold" Margin="2,197,0,0" Click="logOut" >
+        <Button x:Name="statisticsBtn" Visibility="Hidden"  Foreground="#f0eb51" Background="{x:Null}" Content="STATISTIC" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" Height="54" FontWeight="Bold" Margin="2,197,0,0" Click="openStatistic" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="FontSize" Value="35"/>
