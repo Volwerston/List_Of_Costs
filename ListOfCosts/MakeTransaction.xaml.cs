@@ -26,6 +26,18 @@ namespace ListOfCosts
             DataContext = new MakeTransactionViewModel(resourceId, costId);
         }
 
+        private void TB_TargetUpdated(object sender, DataTransferEventArgs e)
+        {
+            TB.Text = TB.Text.ToUpper();
+
+        }
+
+        private void TB1_TargetUpdated(object sender, DataTransferEventArgs e)
+        {
+            TB1.Text = TB1.Text.ToUpper();
+
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try

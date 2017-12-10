@@ -5,32 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
-        Title="MakeTransaction" Height="300" MinHeight="300" Width="300">
-    <StackPanel>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+        Title="Make Transaction" Height="300" MinHeight="300" Width="300" ResizeMode="NoResize" Background="#FF21242F">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*" />
-                <ColumnDefinition Width="6*" />
-                <ColumnDefinition Width="3*" />
-            </Grid.ColumnDefinitions>
+    <Grid Margin="0,0,-0.4,0">
+        <Rectangle Fill="#5b6283" HorizontalAlignment="Left" Height="63" Margin="-36,-14,0,0" VerticalAlignment="Top" Width="330"/>
+        <Rectangle Fill="#5b6283" HorizontalAlignment="Left" Height="24" Margin="-36,82,0,0" VerticalAlignment="Top" Width="330"/>
 
-            <TextBlock Margin="0,10,0,10" Text="{Binding TransactionHelper.Transaction.Resource.Title}" Grid.Row="0" Grid.Column="1"></TextBlock>
-            <TextBox Margin="0,10,0,10" IsEnabled="False" Text="{Binding TransactionHelper.Transaction.Resource.Amount}" Grid.Row="1" Grid.Column="1"></TextBox>
-            <TextBlock Margin="0,10,0,10" Text="{Binding TransactionHelper.Transaction.Cost.Title}" Grid.Row="2" Grid.Column="1"></TextBlock>
-            <TextBox Margin="0,10,0,10" Text="{Binding TransactionHelper.Transaction.Amount}" Grid.Row="3" Grid.Column="1"></TextBox>
-            <TextBox Margin="0,10,0,10" Text="{Binding TransactionHelper.Transaction.Comment}" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="4" Grid.Column="1"></TextBox>
-            <TextBlock Margin="0,10,0,10" Foreground="Red" Text="{Binding TransactionHelper.WasteValidation}" Grid.Row="5" Grid.Column="1"></TextBlock>
-            <Button Margin="0,10,0,10" Grid.Row="6" Grid.Column="1" Click="Button_Click">Save</Button>
-        </Grid>
-    </StackPanel>
+
+        <TextBlock x:Name="TB" FontWeight="Bold" Margin="104,25,31,217.4" Foreground="#f0eb51" Text="{Binding TransactionHelper.Transaction.Resource.Title, NotifyOnTargetUpdated=True}"
+               TargetUpdated="TB_TargetUpdated"/>
+        <TextBox Margin="104,54,0,0" IsEnabled="False" Text="{Binding TransactionHelper.Transaction.Resource.Amount}" 
+                     HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock x:Name="TB1" FontWeight="Bold" Foreground="#f0eb51" Margin="104,82,31,160.4" Text="{Binding TransactionHelper.Transaction.Cost.Title, NotifyOnTargetUpdated=True}"
+               TargetUpdated="TB1_TargetUpdated"/>
+
+        <TextBox Margin="104,111,0,0" Text="{Binding TransactionHelper.Transaction.Amount}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5" />
+        <TextBox Margin="104,150,0,0" Text="{Binding TransactionHelper.Transaction.Comment}" TextWrapping="Wrap" AcceptsReturn="True" 
+                      HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock Margin="104,178,31,64.4" Foreground="Red" Text="{Binding TransactionHelper.WasteValidation}"/>
+
+        <Button x:Name="save" Click="Button_Click" Content="SAVE" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="91" Height="26" FontWeight="Bold" Margin="104,211,0,0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#f0eb51"/>
+                    <Setter Property="Foreground" Value="#2d3040"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#5b6283"/>
+                            <Setter Property="Foreground" Value="#f0eb51"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label Content="Balance : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,54,0,0" Height="23" Width="89" Foreground="#FFF0EB51" FontWeight="Bold"/>
+        <Label Content="Current cost :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,111,0,0" Height="23" Width="89" Foreground="#FFF0EB51" FontWeight="Bold"/>
+        <Label Content="Comment : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,150,0,0" Height="37" Width="89" Foreground="#FFF0EB51" FontWeight="Bold"/>
+        
+    </Grid>
+
 </Window>

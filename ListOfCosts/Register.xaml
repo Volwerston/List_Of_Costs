@@ -9,8 +9,8 @@
     <Grid>
         <Rectangle Fill="#f0eb51" HorizontalAlignment="Left" Height="260" Margin="281,93,0,0" VerticalAlignment="Top" Width="237"/>
 
-        <Label x:Name="label1" Foreground="Red" Content="{Binding RegisterHelper.LoginValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="306,153,0,0" VerticalAlignment="Top" Width="212" Height="25"/>
-        <Label x:Name="label1_Copy" Foreground="Red" Content="{Binding RegisterHelper.PasswordValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="306,230,0,0" VerticalAlignment="Top" Width="212" Height="27"/>
+        <Label x:Name="label1" Foreground="Red" Content="{Binding RegisterHelper.LoginValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="306,153,0,0" VerticalAlignment="Top" Width="212" Height="35"/>
+        <Label x:Name="label1_Copy" Foreground="Red" Content="{Binding RegisterHelper.PasswordValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="306,230,0,0" VerticalAlignment="Top" Width="212" Height="39"/>
         <Label x:Name="label1_Copy1" Foreground="Red" Content="{Binding RegisterHelper.ConfirmPasswordValidation, Mode=TwoWay}" HorizontalAlignment="Left" Margin="306,309,0,0" VerticalAlignment="Top" Width="212" Height="26"/>
 
         <TextBox x:Name="textBox" Text="{Binding RegisterHelper.Model.Login}" HorizontalAlignment="Left" Height="26" Margin="306,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>

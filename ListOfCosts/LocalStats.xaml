@@ -5,13 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
-        Title="LocalStats" Height="300" Width="500">
-    <Grid Margin="0,0,0.333,0.333">
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="27,10,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Year}" SelectedIndex="0" SelectedValue="{Binding SelectedYear, Mode=TwoWay}"/>
-        <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="182,11,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Month}" SelectedValue="{Binding SelectedMonth, Mode=TwoWay}"/>
-        <ComboBox x:Name="comboBox_Copy1" HorizontalAlignment="Left" Margin="341,11,0,0" VerticalAlignment="Top" Width="120"  ItemsSource="{Binding Date}" SelectedValue="{Binding SelectedDate, Mode=TwoWay}"/>
-        <Button x:Name="search" Content="Пошук" Click="search_Click" HorizontalAlignment="Left" Margin="182,60,0,0" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="Imported" VerticalAlignment="Top" ItemsSource="{Binding FoundTransactions, Mode=TwoWay}"  AutoGenerateColumns="False" IsEnabled="False" CanUserResizeColumns="True" Height="129" Margin="10,105,10,0" RenderTransformOrigin="0.5,0.5">
+        Title="LocalStats" Height="395.949" Width="506.208" ResizeMode="NoResize" Background="#FF21242F">
+    <Grid Margin="0,0,4,0.4">
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="157" ItemsSource="{Binding Year}" SelectedIndex="0" SelectedValue="{Binding SelectedYear, Mode=TwoWay}"/>
+        <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="172,11,0,0" VerticalAlignment="Top" Width="157" ItemsSource="{Binding Month}" SelectedValue="{Binding SelectedMonth, Mode=TwoWay}"/>
+        <ComboBox x:Name="comboBox_Copy1" HorizontalAlignment="Left" Margin="334,11,0,0" VerticalAlignment="Top" Width="157"  ItemsSource="{Binding Date}" SelectedValue="{Binding SelectedDate, Mode=TwoWay}"/>
+
+        <Button x:Name="search" Click="search_Click" Content="FIND" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="91" Height="26" FontWeight="Bold" Margin="203,56,0,0">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#f0eb51"/>
+                    <Setter Property="Foreground" Value="#2d3040"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#5b6283"/>
+                            <Setter Property="Foreground" Value="#f0eb51"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <DataGrid x:Name="Imported" VerticalAlignment="Top" ItemsSource="{Binding FoundTransactions, Mode=TwoWay}"  AutoGenerateColumns="False" IsEnabled="False" CanUserResizeColumns="True" Height="245" Margin="10,106,5,0" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF3E8CD7" Background="#FFF0EB51">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
                 <DataGridTextColumn Header="Amount" Binding="{Binding Path=Amount}"/>

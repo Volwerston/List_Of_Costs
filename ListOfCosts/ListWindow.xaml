@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
-        Title="ListWindow" Height="574" Width="772" ResizeMode="NoResize" Background="#2d3040">
+        Title="Coin Keeper Beta" Height="574" Width="772" ResizeMode="NoResize" Background="#2d3040">
     <Grid>
 
         <StackPanel>
