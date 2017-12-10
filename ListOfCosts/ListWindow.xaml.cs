@@ -137,6 +137,8 @@ namespace ListOfCosts
             helpLabel.Visibility = Visibility.Visible;
             closeBtn.Visibility = Visibility.Visible;
             contactLabel.Visibility = Visibility.Hidden;
+            helpText.Visibility = Visibility.Visible;
+            contactText.Visibility = Visibility.Hidden;
         }
 
         private void closeAddMenu(object sender, RoutedEventArgs e)
@@ -145,6 +147,8 @@ namespace ListOfCosts
             helpLabel.Visibility = Visibility.Hidden;
             contactLabel.Visibility = Visibility.Hidden;
             closeBtn.Visibility = Visibility.Hidden;
+            helpText.Visibility = Visibility.Hidden;
+            contactText.Visibility = Visibility.Hidden;
         }
 
         private void openContact(object sender, RoutedEventArgs e)
@@ -153,6 +157,8 @@ namespace ListOfCosts
             contactLabel.Visibility = Visibility.Visible;
             closeBtn.Visibility = Visibility.Visible;
             helpLabel.Visibility = Visibility.Hidden;
+            helpText.Visibility = Visibility.Hidden;
+            contactText.Visibility = Visibility.Visible;
         }
 
         private void logOut(object sender, RoutedEventArgs e)

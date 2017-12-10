@@ -64,8 +64,8 @@
         </StackPanel>
         <Rectangle Visibility="Hidden" x:Name="menuBackground" Fill="#FF21242F" HorizontalAlignment="Left" Width="251" Margin="0,0,0,-0.2"/>
 
-        <Rectangle Visibility="Hidden" x:Name="addBackground" Fill="#FF21242F" HorizontalAlignment="Left" Margin="286,48,0,52.8" Width="426"/>
-        <Label Visibility="Hidden" x:Name="helpLabel" Foreground="#f0eb51" Content="HELP" HorizontalAlignment="Left" Height="86" Margin="420,33,0,0" VerticalAlignment="Top" Width="185" Background="{x:Null}" FontSize="72" FontWeight="Bold"/>
+        <Rectangle Visibility="Hidden"  x:Name="addBackground" Fill="#FF21242F" HorizontalAlignment="Left" Margin="286,48,0,52.8" Width="426"/>
+        <Label Visibility="Hidden"  x:Name="helpLabel" Foreground="#f0eb51" Content="HELP" HorizontalAlignment="Left" Height="86" Margin="420,33,0,0" VerticalAlignment="Top" Width="185" Background="{x:Null}" FontSize="72" FontWeight="Bold"/>
 
         <Label Visibility="Hidden"  x:Name="contactLabel" Foreground="#f0eb51" Content="CONTACT" HorizontalAlignment="Left" Height="86" Margin="364,33,0,0" VerticalAlignment="Top" Width="310" Background="{x:Null}" FontSize="60" FontWeight="Bold"/>
 
@@ -218,6 +218,12 @@
                 </Style>
             </Button.Style>
         </Button>
+        <TextBlock Visibility="Hidden"  x:Name="helpText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="304,127,0,0" Height="352" Width="388" Foreground="#FFF0EB51" FontWeight="Bold" FontSize="16"><Run Text="HOW TO USE APP :"/><LineBreak/><Run Text="&#x9;"/><Run Foreground="#FF3AB8D5" Text="1. "/><Run Text="CREATE RESOURCE, SET TYPE OF"/><LineBreak/><Run Text="&#x9;RESOURCE, NAME AND AMOUNT OF "/><LineBreak/><Run Text="&#x9;MONEY."/><LineBreak/><Run Text="&#x9;"/><Run Foreground="#FF3AB8D5" Text="2. "/><Run Text="THEN, CREATE PRODUCT, CHOOSE&#x9;"/><LineBreak/><Run Text="&#x9;NAME AND TYPE OF IT."/><LineBreak/><Run Text="&#x9;"/><Run Foreground="#FF3AB8D5" Text="3. "/><Run Text="DRAG AND DROP RESOURCE ON &#x9;"/><LineBreak/><Run Text="&#x9;PRODUCT, IN A NEW WINDOW SET &#x9;"/><LineBreak/><Run Text="&#x9;HOW MUCH MONEY YOU SPENT AND&#x9;"/><LineBreak/><Run Text="&#x9;WRITE A COMMENT ABOUT EXPENSE."/><LineBreak/><Run Text="&#x9;"/><Run Foreground="#FF3AB8D5" Text="4. "/><Run Text="CLICKING ON A SINGLE PRODUCT, &#x9;"/><LineBreak/><Run Text="&#x9;THEN IN A NEW WINDOW CLICK ON"/><LineBreak/><Run Text="&#x9;'STATISTIC' YOU CAN CHOOSE DATE "/><LineBreak/><Run Text="&#x9;AND OBSERVE YOUR COSTS SPENT ON"/><LineBreak/><Run Text="&#x9;THIS PRODUCT."/><LineBreak/><Run/></TextBlock>
+        <TextBlock Visibility="Hidden" x:Name="contactText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="304,127,0,0" Height="352" Width="388" Foreground="#FFF0EB51" FontWeight="Bold" FontSize="16"><Run Text="APP IS CREATED BY:"/><LineBreak/><Run/><LineBreak/><Run Text="&#x9;YURIY STETSKYI :"/><LineBreak/><Run Text="&#x9;   "/><Run Foreground="#FF20B8A9" Text="https://github.com/Volwerston">
+                <Run.Background>
+                    <ImageBrush/>
+                </Run.Background>
+            </Run><LineBreak/><Run Text="&#x9;   "/><Run Foreground="#FF20B8A9" Text="ystetskyy333@gmail.com"/><LineBreak/><Run Foreground="#FF20B8A9"/><LineBreak/><Run Foreground="#FF20B8A9"/><LineBreak/><Run Foreground="#FF20B8A9" Text="&#x9;"/><Run Text="BOHDAN TVERDOUKH :"/><LineBreak/><Run Foreground="#FF20B8A9" Text="&#x9;   https://github.com/gercog1"/><LineBreak/><Run Foreground="#FF20B8A9" Text="&#x9;   thefirstflyerok@gmail.com"/><LineBreak/><Run Foreground="#FF20B8A9" Text="&#x9;"/></TextBlock>
 
     </Grid>
 </Window>
