@@ -46,15 +46,15 @@ namespace ListOfCosts
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if(textBox.Text == "" || comboBox.SelectedIndex == -1 ){
+                warning.Content = "* You should fill all fields and select a category.";
+            }
+            else
             {
                 AddCostViewModel vm = DataContext as AddCostViewModel;
                 vm.Add();
                 this.Close();
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
+               
             }
         }
 

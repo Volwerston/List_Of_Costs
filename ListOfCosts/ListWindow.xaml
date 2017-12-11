@@ -10,7 +10,31 @@
 
         <StackPanel>
 
-            <Button Click="Add_Resource" Content="+" Margin="553,75,177.6,0" Foreground="#f0eb51" Height="43" Background="{x:Null}" FontWeight="Bold" FontSize="36" BorderBrush="{x:Null}" RenderTransformOrigin="-0.042,0.498"/>
+            <Button x:Name="button2" Content="✚" HorizontalAlignment="Left" Margin="553,75,0,0" VerticalAlignment="Top" Width="60" Click="Add_Resource" Height="56" FontWeight="Bold">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#2d3040"/>
+                        <Setter Property="Foreground" Value="#f0eb51"/>
+                        <Setter Property="FontSize" Value="30px"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="FontSize" Value="40px"/>
+                                <Setter Property="Foreground" Value="#f0eb51"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
             <ListView Margin="167,0,167,10"  ItemsSource="{Binding Resources}" Background="{x:Null}" BorderBrush="{x:Null}">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -37,7 +61,31 @@
 
 
             <Rectangle Fill="#5b6283" Height="10" Margin="10,0,9.6,0"></Rectangle>
-            <Button Click="Add_Cost" Content="+" Margin="720,0,9.6,0" Height="44" Foreground="#f0eb51" Background="{x:Null}" FontWeight="Bold" FontSize="36" BorderBrush="{x:Null}"/>
+            <Button x:Name="button3" Content="✚" HorizontalAlignment="Left" Margin="685,0,-14.4,0" VerticalAlignment="Top" Width="95" Click="Add_Cost" Height="56" FontWeight="Bold">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#2d3040"/>
+                        <Setter Property="Foreground" Value="#f0eb51"/>
+                        <Setter Property="FontSize" Value="30px"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="FontSize" Value="40px"/>
+                                <Setter Property="Foreground" Value="#f0eb51"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
             <ListView Margin="10,0,9.6,10" ItemsSource="{Binding Costs}" Background="{x:Null}" BorderBrush="{x:Null}">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
