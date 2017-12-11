@@ -40,7 +40,7 @@ namespace ListOfCosts.ViewModels
         }
 
         public static readonly DependencyProperty SelectedYearProperty =
-            DependencyProperty.Register("SelectedYear", typeof(int), typeof(GlobalStatsViewModel), new PropertyMetadata(1900));
+            DependencyProperty.Register("SelectedYear", typeof(int), typeof(GlobalStatsViewModel), new PropertyMetadata(2010));
         public string SelectedMonth
         {
             get { return (string)GetValue(SelectedMonthProperty); }
@@ -82,6 +82,11 @@ namespace ListOfCosts.ViewModels
 
         public GlobalStatsViewModel()
         {
+            Month.Clear();
+            Year.Clear();
+
+
+
             foreach (var month in this.GetMonths())
             {
                 Month.Add(month);
@@ -145,7 +150,7 @@ namespace ListOfCosts.ViewModels
         {
             List<int> toReturn = new List<int>();
 
-            for (int i = 1900; i <= DateTime.Now.Year; ++i)
+            for (int i = 2010; i <= DateTime.Now.Year; ++i)
             {
                 toReturn.Add(i);
             }

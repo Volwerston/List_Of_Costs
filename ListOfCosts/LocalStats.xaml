@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="LocalStats" Height="395.949" Width="506.208" ResizeMode="NoResize" Background="#FF21242F">
     <Grid Margin="0,0,4,0.4">
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="157" ItemsSource="{Binding Year}" SelectedIndex="0" SelectedValue="{Binding SelectedYear, Mode=TwoWay}"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="157" ItemsSource="{Binding Year}" SelectedValue="{Binding SelectedYear, Mode=TwoWay}"/>
         <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="172,11,0,0" VerticalAlignment="Top" Width="157" ItemsSource="{Binding Month}" SelectedValue="{Binding SelectedMonth, Mode=TwoWay}"/>
         <ComboBox x:Name="comboBox_Copy1" HorizontalAlignment="Left" Margin="334,11,0,0" VerticalAlignment="Top" Width="157"  ItemsSource="{Binding Date}" SelectedValue="{Binding SelectedDate, Mode=TwoWay}"/>
 
