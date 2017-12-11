@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\gercog\Desktop\listcosts\ListOfCosts\obj\Debug\
+C:\Users\User\Desktop\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\ListOfCosts\obj\Debug\
 ListOfCosts
 none
 false
 DEBUG;TRACE
-C:\Users\gercog\Desktop\listcosts\ListOfCosts\App.xaml
+C:\Users\User\Desktop\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\ListOfCosts\App.xaml
 8-1781350693
 
-49-1861534396
-73-1270893811
+49-971489632
+73-582196235
 AddCost.xaml;AddResource.xaml;GlobalStats.xaml;ListWindow.xaml;LocalStats.xaml;MainWindow.xaml;MakeTransaction.xaml;Register.xaml;
 
-True
+False
 

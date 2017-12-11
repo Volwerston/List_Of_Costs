@@ -39,13 +39,14 @@ namespace ListOfCosts.db_client
 
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString))
             {
-                using(SqlCommand cmd = new SqlCommand("exec spSearchTransactions @y, @m, @d, @id", con))
+                using(SqlCommand cmd = new SqlCommand("exec spSearchTransactions @y, @m, @d, @id, @oid", con))
                 {
 
                     cmd.Parameters.AddWithValue("@y", toSearch.Item1);
                     cmd.Parameters.AddWithValue("@m", toSearch.Item2);
                     cmd.Parameters.AddWithValue("@d", toSearch.Item3);
                     cmd.Parameters.AddWithValue("@id", toSearch.Item4);
+                    cmd.Parameters.AddWithValue("@oid", DbContext.Identity.Id);
 
                     con.Open();
 
