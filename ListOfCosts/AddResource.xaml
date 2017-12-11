@@ -15,7 +15,7 @@
         </ComboBox>
         <TextBlock Foreground="#f0eb51" x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23" FontSize="13" FontWeight="Bold" Width="131" Text="Amount :"/>
         <TextBox x:Name="textBox_Copy" Text="{Binding Amount}" HorizontalAlignment="Left" Height="23" Margin="127,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5"/>
-        <Button x:Name="register" Click="button_Click" Content="ADD" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="91" Height="26" FontWeight="Bold" Margin="105,156,0,0">
+        <Button x:Name="register" Click="button_Click" Content="SAVE" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="91" Height="26" FontWeight="Bold" Margin="105,156,0,0">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="#f0eb51"/>

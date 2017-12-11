@@ -6,10 +6,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ListOfCosts"
         mc:Ignorable="d"
-        Title="GlobalStats" Height="600" Width="339.791">
-    <Grid Margin="0,10,-0.4,0.4">
+        Title="Global Stats" Height="576" Width="371.019" ResizeMode="NoResize" Background="#FF21242F">
+    <Grid Margin="0,10,-6.4,0.4">
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,11,0,0" VerticalAlignment="Top" Width="157" ItemsSource="{Binding Year}" SelectedIndex="0" SelectedValue="{Binding SelectedYear, Mode=TwoWay}"/>
-        <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="172,11,0,0" VerticalAlignment="Top" Width="157" ItemsSource="{Binding Month}" SelectedValue="{Binding SelectedMonth, Mode=TwoWay}"/>
+        <ComboBox x:Name="comboBox_Copy" HorizontalAlignment="Left" Margin="186,11,0,0" VerticalAlignment="Top" Width="157" ItemsSource="{Binding Month}" SelectedValue="{Binding SelectedMonth, Mode=TwoWay}"/>
 
         <Button x:Name="search" Click="search_Click" Content="FIND" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="91" Height="26" FontWeight="Bold" Margin="129,51,0,0">
             <Button.Style>
@@ -35,7 +35,7 @@
             </Button.Style>
         </Button>
 
-        <DataGrid x:Name="Imported" VerticalAlignment="Top" ItemsSource="{Binding FoundTransactions, Mode=TwoWay}"  AutoGenerateColumns="False" IsEnabled="False" CanUserResizeColumns="True" Height="245" Margin="9,270,10,0" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF3E8CD7" Background="#FFF0EB51">
+        <DataGrid x:Name="Imported" VerticalAlignment="Top" ItemsSource="{Binding FoundTransactions, Mode=TwoWay}"  AutoGenerateColumns="False" IsEnabled="False" CanUserResizeColumns="True" Height="245" Margin="10,272,18.2,0" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF3E8CD7" Background="#FFF0EB51">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"/>
                 <DataGridTextColumn Header="Amount" Binding="{Binding Path=Amount}"/>
@@ -43,7 +43,7 @@
                 <DataGridTextColumn Header="Comment" Binding="{Binding Path=Comment}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <oxy:Plot Title="{Binding GraphTitle}" Margin="9,82,11,295">
+        <oxy:Plot Title="{Binding GraphTitle}" Margin="10,99,28.2,264" Background="#FF21242F" Foreground="{x:Null}" FontSize="18">
             <oxy:Plot.Series>
                 <oxy:LineSeries ItemsSource="{Binding Points}"/>
             </oxy:Plot.Series>

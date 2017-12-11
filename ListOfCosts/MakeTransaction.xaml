@@ -24,7 +24,7 @@
                       HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5"/>
         <TextBlock Margin="104,178,31,64.4" Foreground="Red" Text="{Binding TransactionHelper.WasteValidation}"/>
 
-        <Button x:Name="save" Click="Button_Click" Content="SAVE" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="91" Height="26" FontWeight="Bold" Margin="104,211,0,0">
+        <Button x:Name="save" Click="Button_Click" Content="ADD" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="91" Height="26" FontWeight="Bold" Margin="104,211,0,0">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="#f0eb51"/>
@@ -47,7 +47,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Label Content="Balance : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,54,0,0" Height="23" Width="89" Foreground="#FFF0EB51" FontWeight="Bold"/>
+        <Label Content="Balance : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,54,0,0" Height="28" Width="89" Foreground="#FFF0EB51" FontWeight="Bold"/>
         <Label Content="Current cost :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,111,0,0" Height="23" Width="89" Foreground="#FFF0EB51" FontWeight="Bold"/>
         <Label Content="Comment : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,150,0,0" Height="37" Width="89" Foreground="#FFF0EB51" FontWeight="Bold"/>
         

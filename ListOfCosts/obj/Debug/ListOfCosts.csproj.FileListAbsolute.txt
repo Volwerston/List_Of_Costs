@@ -241,3 +241,12 @@ C:\Users\User\Desktop\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\Lis
 C:\Users\User\Desktop\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\ListOfCosts\bin\Debug\OxyPlot.xml
 C:\Users\User\Desktop\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\ListOfCosts\bin\Debug\OxyPlot.Wpf.pdb
 C:\Users\User\Desktop\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\List_Of_Costs-345b852c90439b18d548b46b9e00a435709a6d9d\ListOfCosts\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\gercog\Desktop\listcosts\ListOfCosts\bin\Debug\OxyPlot.dll
+C:\Users\gercog\Desktop\listcosts\ListOfCosts\bin\Debug\OxyPlot.Wpf.dll
+C:\Users\gercog\Desktop\listcosts\ListOfCosts\bin\Debug\OxyPlot.pdb
+C:\Users\gercog\Desktop\listcosts\ListOfCosts\bin\Debug\OxyPlot.xml
+C:\Users\gercog\Desktop\listcosts\ListOfCosts\bin\Debug\OxyPlot.Wpf.pdb
+C:\Users\gercog\Desktop\listcosts\ListOfCosts\bin\Debug\OxyPlot.Wpf.xml
+C:\Users\gercog\Desktop\listcosts\ListOfCosts\obj\Debug\ListOfCosts.csprojResolveAssemblyReference.cache
+C:\Users\gercog\Desktop\listcosts\ListOfCosts\obj\Debug\GlobalStats.g.cs
+C:\Users\gercog\Desktop\listcosts\ListOfCosts\obj\Debug\GlobalStats.baml
